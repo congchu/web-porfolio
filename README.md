@@ -3,6 +3,7 @@
 Profolio는 개발자를 위한 포트폴리오 템플릿입니다. 제작사를 표기하면 무료로 사용이 가능하고, Html 문법을 사용하여 쉽고 빠르게 배포할 수 있습니다.
 
 # **Overview**
+![https://github.com/congchu/portfolio-1/blob/main/20210428.gif?raw=true](https://github.com/congchu/portfolio-1/blob/main/20210428.gif?raw=true)
 
 HTML 문법을 몰라도, 텍스트를 비교하여 포트폴리오를 제작할 수 있습니다. 레이아웃 변경을 위해서는 기본적인 HTML 문법을 아는 것이 좋습니다. CSS에 친숙하다면 디자인 템플릿도 변경할 수 있습니다.
 
