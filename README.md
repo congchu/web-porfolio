@@ -28,9 +28,6 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는  정적 
 - CSS를 몰라도 제작 가능하지만, CSS에 친숙하다면 디자인도 자유롭게 변경할 수 있습니다.
 
 ## Setup And Deployment 🔧
-
-다른 환경 설정 없이 프로젝트만 내려받아서 수정 후, github에 올리시면 됩니다.
-
 1. 내 프로젝트로 Fork합니다.
 2. repository를 clone하여 로컬로 내려받습니다.
 
@@ -39,16 +36,13 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는  정적 
     ```
 
 4. 내용을 원하는대로 수정합니다.
-
 5. github commit & push 합니다.
 
-  ```bash
-  git commit -m 'initial project'
-  git push - u origin master
-  ```
-
+```bash
+git commit -m 'initial project'
+git push - u origin master
+```
 6. github Settings에서 pages로 이동하여, Source를 main branch로 바꿔줍니다.
-
 7. publish 되었다는 URL로 접속하여 확인합니다 (시간이 좀 걸리니, 5분정도 기다려주세요)
 
 
