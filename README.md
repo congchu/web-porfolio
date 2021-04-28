@@ -16,17 +16,18 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는  정적 
 </p>
 
 
-# **Overview**
-
-HTML 문법을 몰라도, 텍스트를 비교하여 포트폴리오를 제작할 수 있습니다. 레이아웃 변경을 위해서는 기본적인 HTML 문법을 아는 것이 좋습니다. CSS에 친숙하다면 디자인 템플릿도 변경할 수 있습니다.
-
-- HTML, CSS, Bootstrap으로 제작된 웹 포트폴리오
-- 제작자 표기 시, 무료로 활용가능
-- Github pages 기능을 활용한 웹 호스팅
+# **Overview** 
+- static website로 Github pages 활용한 웹 호스팅 가능
 - 개발자 맞춤형 포트폴리오 웹 페이지
+- 제작자 표기 시, 무료로 활용가능
+
+# Prerequisites 🍪
+- PC에 git이 설치되어 있어야하며, Github 계정이 있어야 합니다.
+- HTML 문법을 몰라도, 텍스트만 교체하여 활용할 수 있습니다.
+- 레이아웃이나 디자인을 변경하기 위해서는 기초 HTML 문법을 아는 것이 좋습니다.
+- CSS에 친숙하다면 디자인도 자유롭게 변경할 수 있습니다.
 
 # Setup And Deployment 🔧
-
 다른 환경 설정 없이 프로젝트만 내려받아서 수정 후, github에 올리시면 됩니다.
 
 1. 내 프로젝트로 Fork합니다.
@@ -39,9 +40,7 @@ git clone {저장소URL}
 
 # **Documentation**
 
-API docs are hosted at [https://hoisie.github.io/web/](https://hoisie.github.io/web/)
-
-If you use web.go, I'd greatly appreciate a quick message about what you're building with it. This will help me get a sense of usage patterns, and helps me focus development efforts on features that people will actually use.
+튜토리얼 문서는 [웹 포트폴리오 제작 튜토리얼](https://www.notion.so/cucus/85e3bec77d904f1fa282cec4756232c3)에서 확인해주세요.
 
 # Deploy History
 
