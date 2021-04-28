@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+# Introduction
 
-You can use the [editor on GitHub](https://github.com/congchu/myporfolio/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Profolio는 개발자를 위한 포트폴리오 템플릿입니다. 제작사를 표기하면 무료로 사용이 가능하고, Html 문법을 사용하여 쉽고 빠르게 배포할 수 있습니다.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# **Overview**
 
-### Markdown
+HTML 문법을 몰라도, 텍스트를 비교하여 포트폴리오를 제작할 수 있습니다. 레이아웃 변경을 위해서는 기본적인 HTML 문법을 아는 것이 좋습니다. CSS에 친숙하다면 디자인 템플릿도 변경할 수 있습니다.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- HTML, CSS, Bootstrap으로 제작된 웹 포트폴리오
+- 제작자 표기 시, 무료로 활용가능
+- Github pages 기능을 활용한 웹 호스팅
+- 개발자 맞춤형 포트폴리오 웹 페이지
 
-```markdown
-Syntax highlighted code block
+# Installation
 
-# Header 1
-## Header 2
-### Header 3
+Make sure you have the a working Go environment. See the [install instructions](http://golang.org/doc/install.html). web.go targets the Go `release` branch.
 
-- Bulleted
-- List
+To install web.go, simply run:
 
-1. Numbered
-2. List
+```
+go get github.com/hoisie/web
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+To compile it from source:
 
-### Jekyll Themes
+```
+git clone git://github.com/hoisie/web.git
+cd web && go build
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/congchu/myporfolio/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```
 
-### Support or Contact
+# **Documentation**
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+API docs are hosted at [https://hoisie.github.io/web/](https://hoisie.github.io/web/)
+
+If you use web.go, I'd greatly appreciate a quick message about what you're building with it. This will help me get a sense of usage patterns, and helps me focus development efforts on features that people will actually use.
+
+# Deploy History
+
+2021-04-20
+
+- 프로젝트 생성
+
+2021-04-22
+
+- 전체 레이아웃 수정
+- header 사진 변경
