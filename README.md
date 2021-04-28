@@ -17,16 +17,19 @@ HTML 문법을 몰라도, 텍스트를 비교하여 포트폴리오를 제작할
 
 내 프로젝트로 Fork합니다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f792ca4-00c3-4d26-9e21-95dacd40477c/_2021-04-28__2.58.27.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f792ca4-00c3-4d26-9e21-95dacd40477c/_2021-04-28__2.58.27.png)
-
+```
+소스코드
+```
 프로젝트의 이름을 나의 github name으로 변경합니다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/638cc993-8e25-480f-abf5-a3fa67dc7bba/_2021-04-28__2.58.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/638cc993-8e25-480f-abf5-a3fa67dc7bba/_2021-04-28__2.58.47.png)
+```
+소스코드
+```
 
 repository를 clone하여 로컬로 내려받습니다. 
 
 ```
-git clone git://github.com/hoisie/web.git
+소스코드
 ```
 
 # **Documentation**
