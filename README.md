@@ -4,7 +4,7 @@
 
   <p align="center">
 Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는  정적 포트폴리오 템플릿 입니다. Github 페이지로 호스팅 됩니다.
-    <br/>웹 사이트는 <a href="https://www.jeongkoo.com">DEMO</a>에서 확인하실 수 있습니다.
+    <br/>웹 사이트는 <a href="https://congchu.github.io/web-porfolio/">DEMO</a>에서 확인하실 수 있습니다.
     <br/>
     <br/>
     <img src="https://img.shields.io/badge/-Bootstrap-05122A?style=flat&logo=bootstrap&logoColor=563D7C"/>
@@ -12,7 +12,7 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는  정적 
     <img src="https://img.shields.io/badge/-HTML-05122A?style=flat&logo=HTML5"/>
   <br/>
   <br/>
-  <img src="https://github.com/congchu/portfolio-1/blob/main/20210428.gif?raw=true"/>
+  <img src="https://github.com/congchu/web-porfolio/blob/main/demo/20210428.gif?raw=true"/>
 </p>
 
 
@@ -31,12 +31,12 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는  정적 
 1. 내 프로젝트로 Fork합니다.
 2. repository를 clone하여 로컬로 내려받습니다.
 
-    ```
-    git clone {저장소URL}
-    ```
+   ```
+   git clone {저장소URL}
+   ```
 
-4. 내용을 원하는대로 수정합니다.
-5. github commit & push 합니다.
+3. 내용을 원하는대로 수정합니다.
+4. github commit & push 합니다.
 
 ```bash
 git commit -m 'initial project'
@@ -60,4 +60,3 @@ git push - u origin master
 2021-04-20
 
 - 프로젝트 생성
-
