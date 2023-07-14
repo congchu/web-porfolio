@@ -12,7 +12,7 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는 정적 �
     <img src="https://img.shields.io/badge/-HTML-05122A?style=flat&logo=HTML5"/>
   <br/>
   <br/>
-  <img src="demo/gif.gif"/>
+  <img src="https://github.com/heejung0413/web-porfolio-1/blob/main/demo/gif.gif?raw=true"/>
 </p>
 
 ## Overview ⭐️
