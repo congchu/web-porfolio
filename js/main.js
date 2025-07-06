@@ -365,7 +365,9 @@ window.onload = function() {
   //variable that stores the id of the section
   var id = false;
   //variable for the selection of the anchors in the navbar
-  var $navbara = $('#navi a');
+
+//  스크롤 수정!!!!!!!!!! 여기입니다!!!!!!!!
+  var $navbara = $('#navi a,#ftco-nav a');
   
   $navbara.click(function(e){
     //prevent the page from refreshing

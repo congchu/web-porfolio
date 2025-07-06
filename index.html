@@ -25,6 +25,27 @@
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+		<!-- 코딩 일수 동적 -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const el = document.querySelector(".coding-days");
+				if (!el) return;
+
+				const startDateStr = el.dataset.start;
+				const startDate = new Date(startDateStr);
+				const today = new Date();
+				
+				// 시간 0시 0분으로 초기화해서 정확히 '일수'만 계산
+				startDate.setHours(0, 0, 0, 0);
+				today.setHours(0, 0, 0, 0);
+
+				const diffTime = today - startDate;
+				const diffDays = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
+
+				el.textContent = diffDays;
+			});
+		</script>
+
 
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -98,6 +119,7 @@
 								<li class="d-flex"><span>Email:</span> <span>audgns1640@gmail.com</span></li>
 								<li class="d-flex"><span>Phone: </span> <span>+82-10-4183-1640</span></li>
 								<li class="d-flex"><span>GitHub: </span> <a href="https://github.com/maeng-hun"><span>https://github.com/maeng-hun</span></a></li>
+								<li class="d-flex"><span>Notion: </span> <a href="https://www.notion.so/1dee4b08f8e480b980bac481b24aa4b2"><span>노션 바로가기</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -167,13 +189,15 @@
 						<!-- 왼쪽 사이드 메뉴 -->
 						<ul>
 							<li><a href="#page-1">Education</a></li>
-							<li><a href="#page-2">Experience</a></li>
-							<li><a href="#page-3">Skills</a></li>
-							<li><a href="#page-4">Projects</a></li>
+							<li><a href="#page-2">Awards</a></li>
+							<li><a href="#page-3">Experience</a></li>
+							<li><a href="#page-4">Skills</a></li>
+							<li><a href="#page-5">Projects</a></li>
 						</ul>
 					</nav>
 				</div>
 				<div class="col-md-9" id="education-section">
+					<!-- education -->
 					<div id="page-1" class="page one">
 						<h2 class="heading">Education</h2>
 						<div class="resume-wrap d-flex ftco-animate">
@@ -182,6 +206,12 @@
 							</div>
 							<div class="text pl-3">
 								<span class="date">2024.11-2025.05(6개월)</span>
+								<a class="btn btn-outline-secondary btn-sm ml-3" target="_blank"
+								href="images/스인재수료증.jpg">수료증
+								</a>
+								<a class="btn btn-outline-secondary btn-sm ml-3" target="_blank"
+								href="images/스인재성적.jpg">성적&NCS
+								</a>
 								<h2>DCX기반 빅데이터 분석서비스 개발자 심화 과정(960시간)</h2>
 								<span class="position">스마트인재개발원(SMHRD)</span>
 								<p>Spring, FastAPI, LangChain, Tensorflow 등 여러가지를 활용한 AI와 백엔드 개발 프로젝트에 참여했습니다.  
@@ -191,13 +221,18 @@
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
+								
 							</div>
 							<div class="text pl-3">
-								<span class="date">2017-2022</span>
+								<span class="date">2017.03.02-2023.02.20</span>
+								<a class="btn btn-outline-secondary btn-sm ml-3" target="_blank"
+								href="images/성적증명서.jpg">성적증명서 다운받기
+								</a>
 								<h2>경영학부 전공</h2>
-								<span class="position">Wonkwang Global Univercity</span>
-								<p>학생회에서는 부학생회장으로 활동했고, 경제·금융 동아리를 통해 시장과 자본의 흐름을 이해하고, 숫자 기반의 데이터 사고력을 키웠습니다. 
-								   이러한 경험은 데이터 기반 의사결정과 개발자로서 논리력에 밑바탕이 되었습니다.
+								<span class="position">Wonkwang Global Univercity(학점:3.65/4.5 & 백분율:91.5)</span>
+								<p>학생회에서는 부학생회장으로 활동했고, 경제·금융 동아리를 통해 시장과 자본의 흐름을 이해하며 숫자 기반의 데이터 사고력을 키웠습니다.
+								또한 대학 시절 ‘컴퓨팅적 사고력’과 ‘AI 기술과 미래사회’ 강의를 수강하며 개발자에 필요한 기초적인 프로그래밍 논리와 인공지능 기술에 대한 관심을 쌓았습니다.
+								이러한 경험들은 데이터 기반의 의사결정 역량과 개발자로서의 논리적 사고의 기반이 되었습니다
 								</p>
 							</div>
 						</div>
@@ -215,8 +250,75 @@
 							</div>
 						</div> -->
 					</div>
-
+					<!-- 입상 -->
 					<div id="page-2" class="page two">
+						<h2 class="heading">Awards</h2>
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">2025.05.13</span>
+								<a class="btn btn-outline-secondary btn-sm ml-3" target="_blank"
+								href="images/스인재모범상.jpg">모범상장 확인
+								</a>
+								<h2>모범상</h2>
+								<span class="position">스마트인재개발원(SMHRD)</span>
+								<p>고용노동부가 주관하고 본 원이 수행한 K-Digital Training 핵심실무인재양성사업 DCX기반 빅데이터 분석서비스 개발자 심화 과정에서 우수한 출석태도로 타의 모범이 되었으므로 이에 상장과 부상을 수여함 </p>
+							</div>
+						</div>
+
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>								
+							</div>
+							<div class="text pl-3">
+								<span class="date">2025.05.13</span>
+								<a class="btn btn-outline-secondary btn-sm ml-3" target="_blank"
+								href="images/스인재장려상.jpg">장려상장 확인
+								</a>
+								<h2>장려상</h2>
+								<span class="position">스마트인재개발원(SMHRD)</span>
+								<p>고용노동부가 주관하고 본 원이 수행한 K-Digital Training 핵심실무인재양성사업 DCX기반 빅데이터 분석서비스 개발자 심화 과정에서 실전융합 프로젝트에서 우수한 성적을 거두었으므로 이에 상장과 부상을 수여함
+								</p>
+							</div>
+						</div>
+
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>	
+							</div>
+							<div class="text pl-3">
+								<span class="date">2024.11.28</span>
+								<!-- <a class="btn btn-outline-secondary btn-sm ml-3" target="_blank"
+								href="images/성적증명서.jpg">성적증명서 다운받기
+								</a> -->
+								<h2>Java Festival 2등</h2>
+								<span class="position">스마트인재개발원(SMHRD)</span>
+								<p>DCX기반 빅데이터 분석서비스 심화 과정 팀내 JAVA Festival 2등 수상
+								</p>
+							</div>
+						</div>
+
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>	
+							</div>
+							<div class="text pl-3">
+								<span class="date">2023.02.20</span>
+								<a class="btn btn-outline-secondary btn-sm ml-3" target="_blank"
+								href="images/대학공로상.jpg">공로상장 확인
+								</a>
+								<h2>원광대학교 경영대학장 공로상</h2>
+								<span class="position">원광대학교 경영대학</span>
+								<p>원광대학교 경영대학 부학생회장으로서 학교 공로에 대한 공로상
+								</p>
+							</div>
+						</div>
+
+					</div>
+
+					<div id="page-3" class="page three">
 						<h2 class="heading">Work Experience</h2>
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
@@ -285,7 +387,7 @@
 							</div>
 						</div> -->
 					</div>
-					<div id="page-3" class="page three">
+					<div id="page-4" class="page fore">
 						<h2 class="heading">Skills</h2>
 						<div class="row progress-circle mb-5">
 							<div class="col-lg-10 mb-4">
@@ -304,7 +406,7 @@
 									<div class="col-lg-10 mb-4">
 									<h4 class="skill-title">📘 사용경험은 없으나, 이론적 지식이 있는 </h4>
 									<ul>
-										<li>Programing Languages : C, Typescript</li>
+										<li>Programing Languages : C언어</li>
 										<li>Framework/Library : Flask</li>
 										<li>Tooling/DevOps : Docker</li>
 										<li>Environment : Linux</li>
@@ -508,8 +610,11 @@
 								
 						</div>
 					</div> -->
-						<div class="resume-wrap d-flex ftco-animate">
-							
+					
+
+					<div id="page-5" class="page five">
+						<h2 class="heading">Project</h2>
+						<div class="resume-wrap d-flex ftco-animate">					
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
@@ -529,7 +634,7 @@
 								<span class="position">스마트인재개발원</span>
 								<p>취업준비생이 자소서,이력서를 기반으로 면접 준비와 자기소개서 생성 및 회사 추천을 받을 수 있도록, LLM과 LangChain 기반의 
 									벡터DB(Chroma)를 활용한 AI 맞춤형 커리어 어이스턴트 서비스 개발.</p>
-								<div><b class="text-dark">기술 스택 : </b>FastAPI, React, Typescript, SCSS, PostgreSQL, VectorDB(ChromaDB), LangChain</div>
+								<div><b class="text-dark">기술 스택 : </b>FastAPI, React, LLM, PostgreSQL, VectorDB(ChromaDB), LangChain</div>
 								<div><b class="text-dark">주요 기능 : </b>회원 관리, 자소서 및 포트폴리오 업로드, 자소서 맞춤 AI 면접, 사용자 맞춤 회사 및 멘토 추천</div>
 							</div>
 						</div>
@@ -547,6 +652,8 @@
 								<span class="position">스마트인재개발원</span>
 								<p>코딩을 입문하는 사용자가 프로그래밍 언어와 주제를 선택하면, GPT API를 활용해 자동으로 코딩 문제를 생성하고, 
 									사용자가 직접 문제를 풀고 힌트를 얻으며 학습할 수 있는 AI 기반 코딩 학습 도우미 서비스를 개발.</p>
+								<div><b class="text-dark">기술 스택 : </b>Spring, Tomcat, MySQL, JavaScript, Html, CSS</div>
+								<div><b class="text-dark">주요 기능 : </b>회원 관리, 게시판 구성, DB구축, OpenAI API 연동 </div>	
 							</div>
 						</div>
 						<!-- <div class="resume-wrap d-flex ftco-animate">
@@ -606,7 +713,7 @@
 						style="background-image: url(images/work-3.jpg);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
-							<h3><a href="#">ing..</a></h3>
+							<!-- <h3><a href="#">ing..</a></h3> -->
 							<span>Web Design</span>
 						</div>
 					</div>
@@ -616,7 +723,7 @@
 						style="background-image: url(images/work-4.jpg);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
-							<h3><a href="#">ing..</a></h3>
+							<!-- <h3><a href="#">ing..</a></h3> -->
 							<span>Web Design</span>
 						</div>
 					</div>
@@ -626,7 +733,7 @@
 						style="background-image: url(images/work-5.jpg);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
-							<h3><a href="#">ing</a></h3>
+							<!-- <h3><a href="#">ing</a></h3> -->
 							<span>Web Design</span>
 						</div>
 					</div>
@@ -636,7 +743,7 @@
 						style="background-image: url(images/work-6.jpg);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
-							<h3><a href="#">ing</a></h3>
+							<!-- <h3><a href="#">ing</a></h3> -->
 							<span>Web Design</span>
 						</div>
 					</div>
@@ -650,15 +757,38 @@
 					<div class="row justify-content-center mb-5 pb-5">
 					<div class="col-md-7 heading-section text-center ftco-animate">
 						<h1 class="big big-2">Blog</h1>
-						<h2 class="mb-4">My Blog(ing)</h2>
+						<h2 class="mb-4">My Blog</h2>
 						<p>개인 블로그에 글을 정리하고 있습니다.</p>
 					</div>
 					</div>
 
 					<div class="row d-flex">
+						<!-- 노션 -->
+					<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-6 d-flex justify-content-center">
+						<div class="blog-entry w-100" style="max-width: 400px;">
+							<a href="https://www.notion.so/1dee4b08f8e480b980bac481b24aa4b2"
+							class="block-20"
+							style="background-image: url('images/노션.png'); height: 250px; background-size: cover; background-position: center;">
+							</a>
+							<div class="text mt-3 d-block text-center">
+							<h3 class="heading">
+								<a href="https://www.notion.so/1dee4b08f8e480b980bac481b24aa4b2">Notion</a>
+							</h3>
+							<p class="text-primary mb-1">2025.07</p>
+							<p>공부 흐름을 정리하면서 노션 사용도 익히고 있습니다.
+							   꾸준한 기록으로 자기주도 학습 능력을 키워가고 있습니다.
+							</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					</div>
+	
 
 					<!-- Blog Entry 1 -->
-					<div class="col-md-4 d-flex ftco-animate">
+					<!-- <div class="col-md-4 d-flex ftco-animate">
 						<div class="blog-entry justify-content-end w-100">
 						<a href="https://www.notion.so/1dee4b08f8e480b980bac481b24aa4b2"
 							class="block-20"
@@ -672,10 +802,10 @@
 							<p>깔끔하게 정리하는 중입니다.</p>
 						</div>
 						</div>
-					</div>
+					</div> -->
 
 					<!-- Blog Entry 2 -->
-					<div class="col-md-4 d-flex ftco-animate">
+					<!-- <div class="col-md-4 d-flex ftco-animate">
 						<div class="blog-entry justify-content-end w-100">
 						<a 
 							class="block-20"
@@ -687,10 +817,10 @@
 							<p>ing..</p>
 						</div>
 						</div>
-					</div>
+					</div> -->
 
 					<!-- Blog Entry 3 -->
-					<div class="col-md-4 d-flex ftco-animate">
+					<!-- <div class="col-md-4 d-flex ftco-animate">
 						<div class="blog-entry justify-content-end w-100">
 						<a 
 							class="block-20"
@@ -702,7 +832,7 @@
 							<p>ing..</p>
 						</div>
 						</div>
-					</div>
+					</div> -->
 
 					</div>
 				</div>
