@@ -9641,6 +9641,56 @@ textarea.form-control {
   animation: loader-dash 1.5s ease-in-out infinite;
   stroke-linecap: round; }
 
+/* Technical Challenge 스타일 */
+.challenge-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.challenge-title {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.challenge-section {
+    background: #f8f9fa;
+    padding: 15px;
+    border-left: 4px solid #667eea;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.challenge-section h4 {
+    color: #667eea;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.challenge-section p,
+.challenge-section ul {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.challenge-section ul {
+    padding-left: 20px;
+}
+
+.challenge-section li {
+    margin-bottom: 5px;
+}
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);

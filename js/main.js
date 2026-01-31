@@ -193,6 +193,18 @@
 					  }, 7000
 					);
 				});
+
+                $('.yearNumber').each(function(){
+                    var $this = $(this),
+                        num = $this.data('number');
+                    console.log(num);
+                    $this.animateNumber(
+                        {
+                            number: num,
+                            numberStep: comma_separator_number_step
+                        }, 2000
+                    );
+                });
 				
 			}
 
