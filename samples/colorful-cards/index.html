@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>주니어 프론트엔드 개발자 이서연 — 카드 컬러풀</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--bg: #fbf9f6;
+			--card: #ffffff;
+			--text: #1a1f2c;
+			--muted: #6c7080;
+			--border: rgba(20,20,30,0.06);
+
+			--c-coral:  #ff6b6b;
+			--c-mint:   #4ecdc4;
+			--c-yellow: #ffd166;
+			--c-violet: #7c5cff;
+			--c-pink:   #ff8fb8;
+			--c-blue:   #3b82f6;
+		}
+
+		* { box-sizing: border-box; }
+		html, body { margin: 0; padding: 0; }
+		body {
+			font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+			color: var(--text);
+			background: var(--bg);
+			line-height: 1.55;
+			-webkit-font-smoothing: antialiased;
+		}
+		a { color: inherit; text-decoration: none; }
+
+		.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+		/* ===== Nav ===== */
+		.nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 28px 0;
+		}
+		.logo {
+			font-weight: 800;
+			font-size: 20px;
+			letter-spacing: -0.02em;
+		}
+		.logo span {
+			background: linear-gradient(135deg, var(--c-coral), var(--c-violet));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+		.nav ul {
+			display: flex;
+			gap: 28px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			font-size: 14.5px;
+			font-weight: 500;
+		}
+		.nav ul a { color: var(--muted); }
+		.nav ul a:hover { color: var(--text); }
+		.nav .cta {
+			padding: 10px 18px;
+			background: var(--text);
+			color: #fff;
+			border-radius: 999px;
+			font-size: 13.5px;
+			font-weight: 600;
+		}
+		.nav .cta:hover { background: var(--c-violet); }
+
+		/* ===== Hero ===== */
+		.hero {
+			position: relative;
+			padding: 60px 0 80px;
+			overflow: hidden;
+		}
+		.hero .badge {
+			display: inline-block;
+			background: #fff;
+			border: 1px solid var(--border);
+			padding: 7px 14px;
+			border-radius: 999px;
+			font-size: 13px;
+			font-weight: 600;
+			margin-bottom: 24px;
+		}
+		.hero .badge .dot {
+			display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+			background: var(--c-mint); margin-right: 8px; vertical-align: middle;
+		}
+		.hero h1 {
+			font-size: 64px;
+			font-weight: 800;
+			letter-spacing: -0.035em;
+			line-height: 1.05;
+			margin: 0 0 22px;
+		}
+		.hero h1 .w-coral  { color: var(--c-coral); }
+		.hero h1 .w-mint   { color: var(--c-mint); }
+		.hero h1 .w-violet { color: var(--c-violet); }
+		.hero p {
+			font-size: 18px;
+			color: var(--muted);
+			max-width: 580px;
+			margin: 0 0 32px;
+		}
+		.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+		.btn {
+			padding: 14px 22px;
+			border-radius: 999px;
+			font-size: 14.5px;
+			font-weight: 600;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			transition: transform 0.15s;
+		}
+		.btn:hover { transform: translateY(-1px); }
+		.btn-primary { background: var(--text); color: #fff; }
+		.btn-ghost { background: #fff; color: var(--text); border: 1px solid var(--border); }
+
+		.hero-deco {
+			position: absolute;
+			right: -40px;
+			top: 40px;
+			width: 380px;
+			height: 380px;
+			pointer-events: none;
+		}
+		.hero-deco .blob {
+			position: absolute;
+			border-radius: 50%;
+			filter: blur(40px);
+			opacity: 0.45;
+		}
+		.hero-deco .b1 { width: 220px; height: 220px; background: var(--c-coral); top: 0; left: 60px; }
+		.hero-deco .b2 { width: 200px; height: 200px; background: var(--c-mint);  top: 120px; left: 180px; }
+		.hero-deco .b3 { width: 180px; height: 180px; background: var(--c-yellow); top: 60px; left: 0; }
+
+		/* ===== Stats ===== */
+		.stats {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 16px;
+			margin-bottom: 80px;
+		}
+		.stat {
+			background: var(--card);
+			border-radius: 18px;
+			padding: 24px;
+			border: 1px solid var(--border);
+		}
+		.stat .num {
+			font-size: 36px;
+			font-weight: 800;
+			letter-spacing: -0.02em;
+			margin-bottom: 4px;
+		}
+		.stat .lbl { font-size: 13px; color: var(--muted); font-weight: 500; }
+		.stat.c1 .num { color: var(--c-coral); }
+		.stat.c2 .num { color: var(--c-mint); }
+		.stat.c3 .num { color: var(--c-violet); }
+		.stat.c4 .num { color: var(--c-yellow); }
+
+		/* ===== Sections ===== */
+		section.block { padding: 64px 0; }
+		.section-head { margin-bottom: 36px; }
+		.section-tag {
+			display: inline-block;
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			padding: 6px 12px;
+			border-radius: 999px;
+			margin-bottom: 12px;
+		}
+		.section-tag.coral  { background: rgba(255,107,107,0.12); color: var(--c-coral); }
+		.section-tag.mint   { background: rgba(78,205,196,0.12); color: var(--c-mint); }
+		.section-tag.yellow { background: rgba(255,209,102,0.18); color: #b58108; }
+		.section-tag.violet { background: rgba(124,92,255,0.12); color: var(--c-violet); }
+		.section-title {
+			font-size: 38px;
+			font-weight: 800;
+			letter-spacing: -0.025em;
+			margin: 0 0 10px;
+		}
+		.section-sub { color: var(--muted); font-size: 16px; margin: 0; max-width: 580px; }
+
+		/* ===== About card row ===== */
+		.about-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+		.about-card {
+			background: var(--card);
+			border-radius: 22px;
+			padding: 32px;
+			border: 1px solid var(--border);
+		}
+		.about-card.accent-coral { background: linear-gradient(135deg, #ffe4e4, #fff); }
+		.about-card h3 {
+			margin: 0 0 12px;
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: -0.015em;
+		}
+		.about-card p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+		.about-info { list-style: none; padding: 0; margin: 16px 0 0; font-size: 14.5px; }
+		.about-info li { padding: 6px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border); }
+		.about-info li:last-child { border-bottom: none; }
+		.about-info li b { font-weight: 500; color: var(--muted); }
+
+		/* ===== Experience cards ===== */
+		.exp-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+		.exp-card {
+			background: var(--card);
+			border-radius: 22px;
+			padding: 30px;
+			border: 1px solid var(--border);
+			position: relative;
+			overflow: hidden;
+			transition: transform 0.2s;
+		}
+		.exp-card:hover { transform: translateY(-3px); }
+		.exp-card::before {
+			content: '';
+			position: absolute;
+			top: 0; left: 0; right: 0;
+			height: 5px;
+		}
+		.exp-card.c1::before { background: var(--c-coral); }
+		.exp-card.c2::before { background: var(--c-mint); }
+		.exp-card.c3::before { background: var(--c-violet); }
+		.exp-card.c4::before { background: var(--c-yellow); }
+		.exp-card .date {
+			font-size: 12.5px;
+			font-weight: 600;
+			color: var(--muted);
+			margin-bottom: 8px;
+			letter-spacing: 0.04em;
+		}
+		.exp-card h3 {
+			margin: 0 0 4px;
+			font-size: 20px;
+			font-weight: 700;
+		}
+		.exp-card .org { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+		.exp-card.c1 .org { color: var(--c-coral); }
+		.exp-card.c2 .org { color: var(--c-mint); }
+		.exp-card.c3 .org { color: var(--c-violet); }
+		.exp-card.c4 .org { color: #b58108; }
+		.exp-card p { margin: 0 0 10px; font-size: 14.5px; color: var(--muted); }
+		.exp-card ul { margin: 10px 0 0; padding-left: 18px; font-size: 14px; color: var(--muted); }
+
+		/* ===== Skills ===== */
+		.skill-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 14px;
+		}
+		.skill {
+			background: #fff;
+			border-radius: 16px;
+			padding: 18px;
+			border: 1px solid var(--border);
+			text-align: center;
+			font-weight: 600;
+			font-size: 14.5px;
+		}
+		.skill .pct {
+			display: block;
+			font-size: 22px;
+			font-weight: 800;
+			margin-bottom: 4px;
+			letter-spacing: -0.02em;
+		}
+		.skill.c1 .pct { color: var(--c-coral); }
+		.skill.c2 .pct { color: var(--c-mint); }
+		.skill.c3 .pct { color: var(--c-violet); }
+		.skill.c4 .pct { color: var(--c-blue); }
+		.skill.c5 .pct { color: var(--c-pink); }
+		.skill.c6 .pct { color: #b58108; }
+
+		/* ===== Projects ===== */
+		.proj-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+		}
+		.proj-card {
+			background: var(--card);
+			border-radius: 22px;
+			overflow: hidden;
+			border: 1px solid var(--border);
+			display: flex;
+			flex-direction: column;
+			transition: transform 0.2s;
+		}
+		.proj-card:hover { transform: translateY(-4px); }
+		.proj-thumb {
+			height: 180px;
+			background-size: cover;
+			background-position: center;
+		}
+		.proj-card.c1 .proj-thumb-color { background: linear-gradient(135deg, var(--c-coral), #ffb088); }
+		.proj-card.c2 .proj-thumb-color { background: linear-gradient(135deg, var(--c-mint), #b6f1e8); }
+		.proj-card.c3 .proj-thumb-color { background: linear-gradient(135deg, var(--c-violet), #b8a3ff); }
+		.proj-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; }
+		.proj-body .ptag {
+			font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+			color: var(--muted); margin-bottom: 8px;
+		}
+		.proj-body h3 { font-size: 18px; margin: 0 0 8px; font-weight: 700; }
+		.proj-body p { font-size: 14px; color: var(--muted); margin: 0 0 12px; flex: 1; }
+		.proj-links { display: flex; gap: 8px; flex-wrap: wrap; }
+		.proj-links a {
+			font-size: 12.5px;
+			padding: 6px 12px;
+			border-radius: 999px;
+			background: #f3f3f6;
+			font-weight: 600;
+		}
+		.proj-links a:hover { background: var(--text); color: #fff; }
+
+		/* ===== Contact ===== */
+		.contact-card-big {
+			background: linear-gradient(135deg, #1a1f2c, #2a2f4a);
+			color: #fff;
+			border-radius: 28px;
+			padding: 60px 50px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+			align-items: center;
+		}
+		.contact-card-big h2 {
+			font-size: 40px;
+			font-weight: 800;
+			margin: 0 0 14px;
+			letter-spacing: -0.025em;
+			line-height: 1.1;
+		}
+		.contact-card-big h2 .em {
+			background: linear-gradient(135deg, var(--c-coral), var(--c-yellow));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+		.contact-card-big p { color: rgba(255,255,255,0.65); font-size: 15px; margin: 0; }
+		.contact-list { list-style: none; padding: 0; margin: 0; }
+		.contact-list li {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 16px 0;
+			border-bottom: 1px solid rgba(255,255,255,0.08);
+			font-size: 15px;
+		}
+		.contact-list li b { color: rgba(255,255,255,0.5); font-weight: 500; font-size: 13px; }
+
+		footer.foot {
+			padding: 40px 0 30px;
+			color: var(--muted);
+			font-size: 13px;
+			text-align: center;
+		}
+
+		/* ===== Responsive ===== */
+		@media (max-width: 900px) {
+			.hero h1 { font-size: 42px; }
+			.hero-deco { display: none; }
+			.stats { grid-template-columns: repeat(2, 1fr); }
+			.about-row, .exp-grid { grid-template-columns: 1fr; }
+			.skill-grid { grid-template-columns: repeat(2, 1fr); }
+			.proj-grid { grid-template-columns: 1fr; }
+			.contact-card-big { grid-template-columns: 1fr; padding: 40px 28px; }
+			.contact-card-big h2 { font-size: 30px; }
+			.section-title { font-size: 28px; }
+			.nav ul { display: none; }
+		}
+	</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+	<nav class="nav">
+		<a class="logo" href="#"><span>Seo</span>YeonLee</a>
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#experience">Experience</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+		<a class="cta" target="_blank" href="https://example.com/seoyeon-resume.pdf">Resume ↗</a>
+	</nav>
+
+	<section class="hero">
+		<div class="hero-deco">
+			<span class="blob b1"></span>
+			<span class="blob b2"></span>
+			<span class="blob b3"></span>
+		</div>
+		<div class="badge"><span class="dot"></span> 함께 자랄 팀을 찾고 있어요</div>
+		<h1>
+			<span class="w-coral">사용자</span> 가까이에서<br>
+			<span class="w-violet">화면</span>을 짓는<br>
+			<span class="w-mint">주니어</span> 프론트엔드, 이서연.
+		</h1>
+		<p>1년 6개월간 콘텐츠 발행 도구를 만드는 스타트업에서 React/TypeScript로 SPA를 함께 만들었어요. 작은 디테일을 끝까지 챙기는 일과, 매일 좋은 코드를 읽으며 자라는 시간을 좋아합니다.</p>
+		<div class="actions">
+			<a class="btn btn-primary" href="#projects">프로젝트 보기 →</a>
+			<a class="btn btn-ghost" href="#contact">함께 일하기</a>
+		</div>
+	</section>
+
+	<div class="stats">
+		<div class="stat c1"><div class="num">1.5y</div><div class="lbl">Years Experience</div></div>
+		<div class="stat c2"><div class="num">12</div><div class="lbl">Projects Shipped</div></div>
+		<div class="stat c3"><div class="num">365</div><div class="lbl">Days of Coding</div></div>
+		<div class="stat c4"><div class="num">∞</div><div class="lbl">Cups of Coffee</div></div>
+	</div>
+
+	<section class="block" id="about">
+		<div class="section-head">
+			<span class="section-tag coral">About</span>
+			<h2 class="section-title">짧게 저를 소개합니다.</h2>
+			<p class="section-sub">코드, 디자인, 사용자가 만나는 지점에서 가장 신나는 사람입니다.</p>
+		</div>
+		<div class="about-row">
+			<div class="about-card accent-coral">
+				<h3>한 뼘씩 자라는 주니어</h3>
+				<p>작은 디테일이 사용자의 인상을 결정한다고 믿는 주니어 프론트엔드 개발자입니다. 1년 6개월간 콘텐츠 발행 도구를 만드는 스타트업에서 React/TypeScript 기반 SPA를 함께 만들며 프론트엔드의 기본기를 다졌어요.</p>
+				<p>사용자에게 닿는 인터페이스를 만드는 일을 가장 좋아하고, 매일 좋은 코드를 읽으며 더 자라고 싶습니다.</p>
+			</div>
+			<div class="about-card">
+				<h3>기본 정보</h3>
+				<ul class="about-info">
+					<li><b>이름</b><span>이서연</span></li>
+					<li><b>직무</b><span>Frontend Developer (Junior)</span></li>
+					<li><b>경력</b><span>1년 6개월</span></li>
+					<li><b>위치</b><span>서울 마포구</span></li>
+					<li><b>이메일</b><span>seoyeon.dev@example.com</span></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="block" id="experience">
+		<div class="section-head">
+			<span class="section-tag mint">Experience</span>
+			<h2 class="section-title">걸어온 길.</h2>
+			<p class="section-sub">학교에서 시작해 스타트업에서 제품을 만들기까지.</p>
+		</div>
+		<div class="exp-grid">
+			<div class="exp-card c1">
+				<div class="date">2023.03 — 현재 · 1년 6개월</div>
+				<h3>Frontend Developer</h3>
+				<div class="org">주식회사 코드그라운드</div>
+				<p>콘텐츠 크리에이터를 위한 발행 도구 <b>Studio</b>의 웹 프론트엔드 개발에 참여 중. 선배 개발자분들과 함께 일하며 협업과 코드 리뷰의 즐거움을 처음 배웠어요.</p>
+				<ul>
+					<li>React + TypeScript 기반 SPA 화면 단위 개발 및 운영</li>
+					<li>디자인 시스템 도입을 위한 Storybook 컴포넌트 30+개 작성</li>
+					<li>에디터·발행 흐름 페이지 CSR → Next.js App Router 마이그레이션 일부</li>
+					<li>React Query 도입 과정에 참여, 캐시·서버상태 관리 일부 화면 적용</li>
+				</ul>
+			</div>
+			<div class="exp-card c2">
+				<div class="date">2022.05 — 2022.10</div>
+				<h3>프론트엔드 부트캠프 수료</h3>
+				<div class="org">OO 부트캠프</div>
+				<p>6개월간 React·TypeScript·Next.js를 다지고, 팀 프로젝트 2개를 마무리. 졸업작품 "책꽂이"로 우수상 수상.</p>
+			</div>
+			<div class="exp-card c3">
+				<div class="date">2018.03 — 2022.02</div>
+				<h3>OO학과 학사</h3>
+				<div class="org">OO 대학교</div>
+				<p>학부에서 미디어와 소프트웨어 모두를 배우며 사용자에게 닿는 인터페이스에 일찍부터 관심을 가졌습니다.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="block" id="skills">
+		<div class="section-head">
+			<span class="section-tag violet">Skills</span>
+			<h2 class="section-title">기술 스택.</h2>
+			<p class="section-sub">"잘한다"보다는 "지금 어느 단계에 있는가"로 정리했어요.</p>
+		</div>
+		<div class="skill-grid">
+			<div class="skill c1"><span class="pct">90%</span>React</div>
+			<div class="skill c4"><span class="pct">90%</span>HTML5 / CSS3</div>
+			<div class="skill c3"><span class="pct">85%</span>TypeScript</div>
+			<div class="skill c2"><span class="pct">75%</span>Next.js</div>
+			<div class="skill c5"><span class="pct">75%</span>Styled-components</div>
+			<div class="skill c6"><span class="pct">70%</span>Storybook</div>
+			<div class="skill c1"><span class="pct">60%</span>React Query (학습)</div>
+			<div class="skill c2"><span class="pct">55%</span>Zustand (학습)</div>
+		</div>
+	</section>
+
+	<section class="block" id="projects">
+		<div class="section-head">
+			<span class="section-tag yellow">Projects</span>
+			<h2 class="section-title">만든 것들.</h2>
+			<p class="section-sub">일과 사이드, 가리지 않고 만들어왔어요.</p>
+		</div>
+		<div class="proj-grid">
+			<div class="proj-card c1">
+				<div class="proj-thumb proj-thumb-color" style="background-image: url('images/project_1_screenshot.png');"></div>
+				<div class="proj-body">
+					<div class="ptag">Work · 2023 — 진행 중</div>
+					<h3>Studio — 콘텐츠 발행 도구</h3>
+					<p>에디터 사이드바·발행 모달 개발과 30+개 Storybook 컴포넌트 작성, 자동 저장 인터랙션 개선을 맡았어요.</p>
+					<div class="proj-links">
+						<a target="_blank" href="https://studio.example.com">Live</a>
+					</div>
+				</div>
+			</div>
+			<div class="proj-card c2">
+				<div class="proj-thumb proj-thumb-color" style="background-image: url('images/side-project-1.png');"></div>
+				<div class="proj-body">
+					<div class="ptag">부트캠프 졸업작품 · 2022</div>
+					<h3>책꽂이 — 책장 공유 서비스</h3>
+					<p>5인 팀 프로젝트, 본인은 프론트엔드 전담. 메인 피드·도서 검색·내 책장 관리 UI를 전부 구현했어요.</p>
+					<div class="proj-links">
+						<a target="_blank" href="https://github.com/seoyeon-dev/bookshelf">GitHub</a>
+					</div>
+				</div>
+			</div>
+			<div class="proj-card c3">
+				<div class="proj-thumb proj-thumb-color"></div>
+				<div class="proj-body">
+					<div class="ptag">Side Project · 2024 —</div>
+					<h3>우리 동네 카페 지도</h3>
+					<p>좋아하는 카페를 지도에 모아두고 친구들과 공유. 기획·디자인·구현·배포까지 1인으로 진행했어요.</p>
+					<div class="proj-links">
+						<a target="_blank" href="https://cafemap.example.com">Live</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="block" id="contact">
+		<div class="contact-card-big">
+			<div>
+				<h2>같이 자랄 <span class="em">팀</span>을 찾고 있어요.</h2>
+				<p>사용자 가까이에서 디테일을 챙기는 주니어 프론트엔드를 찾고 계신다면, 언제든 가볍게 연락 주세요.</p>
+			</div>
+			<ul class="contact-list">
+				<li><b>EMAIL</b><a href="mailto:seoyeon.dev@example.com">seoyeon.dev@example.com</a></li>
+				<li><b>PHONE</b><a href="tel:+821000000000">+82 10-0000-0000</a></li>
+				<li><b>LOCATION</b><span>서울 마포구</span></li>
+				<li><b>GITHUB</b><a target="_blank" href="https://github.com/seoyeon-dev">@seoyeon-dev</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<footer class="foot">
+		© <script>document.write(new Date().getFullYear());</script> 이서연 · Template base by <a href="https://colorlib.com" target="_blank" style="color: var(--c-violet);">Colorlib</a>
+	</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>주니어 프론트엔드 개발자 이서연 — 사이드바 라이트</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--bg: #ffffff;
+			--surface: #f7f7f8;
+			--border: #e8e8ec;
+			--text: #1a1a1f;
+			--muted: #6b6b75;
+			--accent: #2d4ef5;
+			--accent-soft: #eef1ff;
+			--radius: 10px;
+		}
+
+		* { box-sizing: border-box; }
+		html, body { margin: 0; padding: 0; }
+		body {
+			font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+			color: var(--text);
+			background: var(--bg);
+			line-height: 1.6;
+			font-weight: 400;
+			-webkit-font-smoothing: antialiased;
+		}
+		a { color: var(--accent); text-decoration: none; }
+		a:hover { text-decoration: underline; }
+
+		.layout {
+			display: grid;
+			grid-template-columns: 300px 1fr;
+			min-height: 100vh;
+		}
+
+		/* ===== Sidebar ===== */
+		.sidebar {
+			position: sticky;
+			top: 0;
+			height: 100vh;
+			padding: 40px 28px;
+			background: var(--surface);
+			border-right: 1px solid var(--border);
+			overflow-y: auto;
+			display: flex;
+			flex-direction: column;
+		}
+		.avatar {
+			width: 110px;
+			height: 110px;
+			border-radius: 50%;
+			background: #ddd center/cover no-repeat;
+			background-image: url('images/about.jpg');
+			margin-bottom: 20px;
+			border: 3px solid #fff;
+			box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+		}
+		.sidebar .name {
+			font-size: 22px;
+			font-weight: 700;
+			margin: 0 0 4px;
+			letter-spacing: -0.01em;
+		}
+		.sidebar .role {
+			font-size: 13px;
+			color: var(--muted);
+			margin: 0 0 24px;
+		}
+		.sidebar .info {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 28px;
+			font-size: 13.5px;
+		}
+		.sidebar .info li {
+			padding: 6px 0;
+			color: var(--muted);
+			display: flex;
+			gap: 8px;
+		}
+		.sidebar .info li b {
+			color: var(--text);
+			font-weight: 500;
+			min-width: 56px;
+			display: inline-block;
+		}
+		.nav {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 24px;
+			border-top: 1px solid var(--border);
+			padding-top: 20px;
+		}
+		.nav li a {
+			display: block;
+			padding: 8px 10px;
+			margin: 2px 0;
+			border-radius: 6px;
+			color: var(--text);
+			font-size: 14px;
+			font-weight: 500;
+			text-decoration: none;
+		}
+		.nav li a:hover { background: var(--accent-soft); color: var(--accent); }
+		.sidebar .resume-btn {
+			display: inline-block;
+			padding: 11px 18px;
+			background: var(--accent);
+			color: #fff;
+			border-radius: 8px;
+			font-size: 13.5px;
+			font-weight: 600;
+			text-align: center;
+			margin-top: auto;
+		}
+		.sidebar .resume-btn:hover { text-decoration: none; opacity: 0.92; }
+		.sidebar .socials { display: flex; gap: 14px; margin-top: 18px; font-size: 13px; }
+		.sidebar .socials a { color: var(--muted); }
+		.sidebar .socials a:hover { color: var(--accent); }
+
+		/* ===== Main ===== */
+		.main { padding: 64px 80px; max-width: 920px; }
+		.section { margin-bottom: 72px; }
+		.section-label {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 0.18em;
+			color: var(--accent);
+			font-weight: 600;
+			margin-bottom: 10px;
+		}
+		.section-title {
+			font-size: 28px;
+			font-weight: 700;
+			margin: 0 0 22px;
+			letter-spacing: -0.02em;
+		}
+		.intro h1 {
+			font-size: 44px;
+			font-weight: 700;
+			margin: 0 0 16px;
+			letter-spacing: -0.03em;
+			line-height: 1.15;
+		}
+		.intro h1 span { color: var(--accent); }
+		.intro p {
+			font-size: 16.5px;
+			color: var(--muted);
+			max-width: 640px;
+			margin: 0 0 12px;
+		}
+
+		/* Timeline */
+		.timeline {
+			position: relative;
+			padding-left: 22px;
+		}
+		.timeline::before {
+			content: '';
+			position: absolute;
+			left: 5px; top: 6px; bottom: 6px;
+			width: 1px;
+			background: var(--border);
+		}
+		.timeline-item {
+			position: relative;
+			padding-bottom: 28px;
+		}
+		.timeline-item::before {
+			content: '';
+			position: absolute;
+			left: -22px;
+			top: 7px;
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			background: var(--bg);
+			border: 2px solid var(--accent);
+		}
+		.timeline-item .date {
+			font-size: 12.5px;
+			color: var(--muted);
+			margin-bottom: 4px;
+			letter-spacing: 0.02em;
+		}
+		.timeline-item h3 {
+			font-size: 17px;
+			font-weight: 600;
+			margin: 0 0 4px;
+		}
+		.timeline-item .org {
+			font-size: 13.5px;
+			color: var(--accent);
+			margin-bottom: 8px;
+		}
+		.timeline-item p {
+			margin: 0 0 6px;
+			font-size: 14.5px;
+			color: var(--muted);
+		}
+		.timeline-item ul {
+			margin: 6px 0 0;
+			padding-left: 18px;
+			font-size: 14px;
+			color: var(--muted);
+		}
+		.timeline-item ul li { padding: 2px 0; }
+
+		/* Skills */
+		.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+		.skill-tags span {
+			padding: 7px 14px;
+			background: var(--surface);
+			border: 1px solid var(--border);
+			border-radius: 999px;
+			font-size: 13px;
+			color: var(--text);
+		}
+		.skill-tags span.primary {
+			background: var(--accent-soft);
+			border-color: transparent;
+			color: var(--accent);
+			font-weight: 500;
+		}
+
+		/* Projects */
+		.project-list { display: flex; flex-direction: column; gap: 14px; }
+		.project {
+			padding: 22px 24px;
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			transition: border-color 0.15s, transform 0.15s;
+		}
+		.project:hover { border-color: var(--accent); }
+		.project-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+		.project h3 { font-size: 17px; font-weight: 600; margin: 0; }
+		.project .meta { font-size: 12.5px; color: var(--muted); }
+		.project p { margin: 6px 0; font-size: 14.5px; color: var(--muted); }
+		.project .stack { font-size: 13px; color: var(--text); margin-top: 8px; }
+		.project .stack b { color: var(--muted); font-weight: 500; margin-right: 4px; }
+		.project .links { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+		.project .links a {
+			font-size: 12.5px;
+			padding: 5px 11px;
+			border: 1px solid var(--border);
+			border-radius: 6px;
+			color: var(--text);
+		}
+		.project .links a:hover { background: var(--accent); color: #fff; border-color: var(--accent); text-decoration: none; }
+
+		/* Contact */
+		.contact-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 14px;
+		}
+		.contact-card {
+			padding: 18px 20px;
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+		}
+		.contact-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 4px; }
+		.contact-card .value { font-size: 15px; font-weight: 500; }
+
+		footer.foot {
+			margin-top: 80px;
+			padding-top: 24px;
+			border-top: 1px solid var(--border);
+			color: var(--muted);
+			font-size: 12.5px;
+		}
+
+		/* ===== Responsive ===== */
+		@media (max-width: 900px) {
+			.layout { grid-template-columns: 1fr; }
+			.sidebar {
+				position: static;
+				height: auto;
+				border-right: none;
+				border-bottom: 1px solid var(--border);
+				padding: 32px 24px;
+			}
+			.main { padding: 40px 24px; }
+			.intro h1 { font-size: 34px; }
+			.contact-grid { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+
+<body>
+
+<div class="layout">
+	<aside class="sidebar">
+		<div class="avatar" role="img" aria-label="이서연 프로필 이미지"></div>
+		<h2 class="name">이서연</h2>
+		<p class="role">Frontend Developer · Junior</p>
+
+		<ul class="info">
+			<li><b>Location</b> <span>서울 마포구</span></li>
+			<li><b>Email</b> <span>seoyeon.dev@example.com</span></li>
+			<li><b>Phone</b> <span>+82 10-0000-0000</span></li>
+		</ul>
+
+		<ul class="nav">
+			<li><a href="#about">About</a></li>
+			<li><a href="#experience">Experience</a></li>
+			<li><a href="#skills">Skills</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+
+		<a class="resume-btn" target="_blank" href="https://example.com/seoyeon-resume.pdf">이력서 다운로드</a>
+
+		<div class="socials">
+			<a href="https://github.com/seoyeon-dev" target="_blank">GitHub</a>
+			<a href="https://velog.io/@seoyeon-dev" target="_blank">Blog</a>
+			<a href="mailto:seoyeon.dev@example.com">Email</a>
+		</div>
+	</aside>
+
+	<main class="main">
+
+		<section class="section intro" id="about">
+			<div class="section-label">Hello, I am</div>
+			<h1>사용자와 가장 가까운 화면을 짓는<br><span>주니어 프론트엔드</span> 개발자입니다.</h1>
+			<p>작은 디테일이 사용자의 인상을 결정한다고 믿는 주니어 프론트엔드 개발자 이서연입니다. 1년 6개월간 콘텐츠 발행 도구를 만드는 스타트업에서 React/TypeScript 기반 SPA를 함께 만들며 프론트엔드의 기본기를 다졌고, 매일 좋은 코드를 읽으며 한 뼘씩 자라고 있어요.</p>
+		</section>
+
+		<section class="section" id="experience">
+			<div class="section-label">Experience</div>
+			<h2 class="section-title">Work Experience</h2>
+			<div class="timeline">
+				<div class="timeline-item">
+					<div class="date">2023.03 — 현재 · 1년 6개월</div>
+					<h3>Frontend Developer</h3>
+					<div class="org">주식회사 코드그라운드</div>
+					<p>콘텐츠 크리에이터를 위한 발행 도구 <b>Studio</b>의 웹 프론트엔드 개발에 참여하고 있어요. 선배 개발자분들과 함께 일하며 협업과 코드 리뷰의 즐거움을 처음 배웠습니다.</p>
+					<ul>
+						<li>React + TypeScript 기반 SPA 화면 단위 개발 및 운영</li>
+						<li>디자인 시스템 도입을 위한 Storybook 컴포넌트 30+개 작성</li>
+						<li>에디터·발행 흐름 페이지 CSR → Next.js App Router 마이그레이션 일부</li>
+						<li>React Query 도입 과정에 참여하여 캐시·서버상태 관리 일부 화면 적용</li>
+					</ul>
+				</div>
+				<div class="timeline-item">
+					<div class="date">2022.05 — 2022.10</div>
+					<h3>프론트엔드 부트캠프 수료</h3>
+					<div class="org">OO 부트캠프</div>
+					<p>6개월간 React·TypeScript·Next.js를 다지고, 팀 프로젝트 2개를 마무리. 졸업작품 "책꽂이"로 우수상 수상.</p>
+				</div>
+				<div class="timeline-item">
+					<div class="date">2018.03 — 2022.02</div>
+					<h3>OO학과 학사</h3>
+					<div class="org">OO 대학교</div>
+					<p>학부에서 미디어와 소프트웨어 모두를 배우며, 사용자에게 닿는 인터페이스에 일찍부터 관심을 가졌습니다.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="skills">
+			<div class="section-label">Skills</div>
+			<h2 class="section-title">기술 스택</h2>
+			<p style="color: var(--muted); margin: -8px 0 18px; font-size: 14px;">"잘한다"보다는 "지금 어느 단계에 있는가"로 솔직하게 정리했어요.</p>
+			<div class="skill-tags">
+				<span class="primary">React</span>
+				<span class="primary">TypeScript</span>
+				<span class="primary">HTML5 / CSS3</span>
+				<span>Next.js</span>
+				<span>Styled-components</span>
+				<span>Storybook</span>
+				<span>Git / GitHub</span>
+				<span>AWS S3</span>
+				<span>React Query (학습 중)</span>
+				<span>Zustand (학습 중)</span>
+				<span>Testing Library (학습 중)</span>
+			</div>
+		</section>
+
+		<section class="section" id="projects">
+			<div class="section-label">Projects</div>
+			<h2 class="section-title">Selected Work</h2>
+			<div class="project-list">
+				<div class="project">
+					<div class="project-head">
+						<h3>Studio — 콘텐츠 발행 도구</h3>
+						<span class="meta">2023.05 — 진행 중 · 주식회사 코드그라운드</span>
+					</div>
+					<p>에디터 사이드바·발행 모달의 화면 단위 개발, 디자인 시스템 컴포넌트 30+개 작성, 자동 저장 인터랙션 개선(debounce + 시각적 피드백)을 맡았어요.</p>
+					<div class="stack"><b>Stack</b> React · Next.js · TypeScript · Styled-components · React Query</div>
+					<div class="links">
+						<a target="_blank" href="https://studio.example.com">Live</a>
+						<a target="_blank" href="images/project_1_screenshot.png">Screenshot</a>
+					</div>
+				</div>
+				<div class="project">
+					<div class="project-head">
+						<h3>책꽂이 — 책장 공유 서비스</h3>
+						<span class="meta">2022.09 · 부트캠프 졸업작품 · 5인 팀</span>
+					</div>
+					<p>메인 피드·도서 검색·내 책장 관리 UI 전체 화면을 구현. 인피니트 스크롤과 낙관적 업데이트를 처음 적용해본 프로젝트.</p>
+					<div class="stack"><b>Stack</b> React · TypeScript · Recoil · Styled-components · Firebase</div>
+					<div class="links">
+						<a target="_blank" href="https://github.com/seoyeon-dev/bookshelf">GitHub</a>
+					</div>
+				</div>
+				<div class="project">
+					<div class="project-head">
+						<h3>우리 동네 카페 지도</h3>
+						<span class="meta">2024.02 — · 1인 사이드 프로젝트</span>
+					</div>
+					<p>기획·디자인·구현·배포까지 1인으로 진행한 사이드 프로젝트. 좋아하는 카페를 지도에 모아두고 친구들과 공유합니다.</p>
+					<div class="stack"><b>Stack</b> Next.js · TypeScript · Mapbox GL · Tailwind CSS</div>
+					<div class="links">
+						<a target="_blank" href="https://cafemap.example.com">Live</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="contact">
+			<div class="section-label">Contact</div>
+			<h2 class="section-title">함께 자랄 팀을 찾고 있어요</h2>
+			<p style="color: var(--muted); margin: 0 0 22px; max-width: 580px;">사용자 가까이에서 작은 디테일을 끝까지 챙기는 주니어 프론트엔드를 찾고 계신다면, 가볍게라도 이야기 나눠보고 싶어요.</p>
+			<div class="contact-grid">
+				<div class="contact-card">
+					<div class="label">Email</div>
+					<div class="value"><a href="mailto:seoyeon.dev@example.com">seoyeon.dev@example.com</a></div>
+				</div>
+				<div class="contact-card">
+					<div class="label">Phone</div>
+					<div class="value"><a href="tel:+821000000000">+82 10-0000-0000</a></div>
+				</div>
+				<div class="contact-card">
+					<div class="label">Location</div>
+					<div class="value">서울 마포구</div>
+				</div>
+				<div class="contact-card">
+					<div class="label">GitHub</div>
+					<div class="value"><a target="_blank" href="https://github.com/seoyeon-dev">github.com/seoyeon-dev</a></div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="foot">
+			© <script>document.write(new Date().getFullYear());</script> 이서연 · Built with this template — base by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+		</footer>
+	</main>
+</div>
+
+</body>
+</html>

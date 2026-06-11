@@ -15,6 +15,50 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는 정적 �
   <img src="https://github.com/congchu/web-porfolio/blob/main/demo/20210428.gif?raw=true"/>
 </p>
 
+## Samples 🎨
+
+원하는 스타일을 골라 시작하세요. 각 샘플은 같은 콘텐츠(**주니어 프론트엔드 개발자 페르소나**)를 서로 다른 레이아웃·톤으로 보여줍니다.
+
+| # | 스타일 | 폴더 | 미리보기 |
+| --- | --- | --- | --- |
+| 1 | 다크 풀스크린 + 스크롤 애니메이션 (원본) | [`samples/dark-fullscreen/`](./samples/dark-fullscreen/)   | [DEMO](https://congchu.github.io/web-porfolio/samples/dark-fullscreen/) |
+| 2 | 라이트 미니멀 + 좌측 고정 사이드바        | [`samples/sidebar-light/`](./samples/sidebar-light/)       | [DEMO](https://congchu.github.io/web-porfolio/samples/sidebar-light/)   |
+| 3 | 컬러풀 + 카드 그리드                      | [`samples/colorful-cards/`](./samples/colorful-cards/)     | [DEMO](https://congchu.github.io/web-porfolio/samples/colorful-cards/)  |
+
+루트의 [`index.html`](./index.html)은 위 3개를 한눈에 보는 **갤러리 페이지**입니다. → [https://congchu.github.io/web-porfolio/](https://congchu.github.io/web-porfolio/)
+
+### 폴더 구조
+
+```
+.
+├── index.html                  # 갤러리 페이지
+├── content.md                  # 공통 페르소나 콘텐츠 (단일 소스)
+└── samples/
+    ├── dark-fullscreen/        # Sample 1 (self-contained)
+    │   ├── index.html
+    │   ├── single.html
+    │   ├── css/ js/ fonts/ scss/
+    │   └── images/
+    ├── sidebar-light/          # Sample 2 (self-contained)
+    │   ├── index.html
+    │   └── images/
+    └── colorful-cards/         # Sample 3 (self-contained)
+        ├── index.html
+        └── images/
+```
+
+각 샘플 폴더는 **self-contained** — 폴더 통째로 옮겨도 그대로 동작합니다.
+
+### 콘텐츠 수정
+
+페르소나(이름·경력·프로젝트 등)는 [`content.md`](./content.md)에 한 군데 정리되어 있어요. 자기 정보로 갈아끼울 때는 `content.md`를 먼저 다듬은 뒤 각 샘플 HTML에 반영하면 일관성이 유지됩니다.
+
+> 💡 `sidebar-light`·`colorful-cards`는 외부 JS 의존성 없이 단일 HTML로 동작합니다. `dark-fullscreen`은 Bootstrap·jQuery·AOS 등 자원을 자기 폴더 안에 갖고 있어요.
+
+### 원하는 샘플 하나만 쓰고 싶다면
+
+마음에 드는 샘플 폴더 통째로 fork해서 쓰시면 됩니다. 예를 들어 `samples/sidebar-light/`만 떠가서 GitHub Pages에 배포하면 끝.
+
 ## Overview ⭐️
 
 - static website로 Github pages 활용한 웹 호스팅 가능
@@ -53,6 +97,13 @@ git push - u origin master
 튜토리얼 문서는 [웹 포트폴리오 제작 튜토리얼](https://www.notion.so/cucus/85e3bec77d904f1fa282cec4756232c3)에서 확인해주세요.
 
 ## Deploy History 🌳
+
+2026-06-10
+
+- `samples/` 폴더 구조로 정리: `dark-fullscreen`(원본), `sidebar-light`, `colorful-cards`
+- 각 샘플을 **self-contained**로 분리 — `css/ js/ fonts/ images/` 자원이 각 폴더 안에 들어감
+- 루트 `index.html`을 갤러리 페이지로 교체
+- 공통 콘텐츠 단일 소스 `content.md` 추가 (주니어 프론트엔드 페르소나)
 
 2021-12-28
 
