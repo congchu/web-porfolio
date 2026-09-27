@@ -2,795 +2,1038 @@
 <html lang="en">
 
 <head>
-	<title>프론트엔드 개발자 구민정</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <title>Portfolio - Dev Nguyen Minh Chau</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="Portfolio of Nguyen Minh Chau - Fullstack Software Engineer specializing in Java Spring Boot, Angular, ReactJS, RxJS, RabbitMQ, and Redis with 2+ years of enterprise experience.">
+  <meta name="keywords"
+    content="Nguyen Minh Chau, Fullstack Developer, Frontend Developer, Java Spring Boot, Angular, ReactJS, Portfolio, RxJS, RabbitMQ, Redis">
+  <meta name="author" content="Nguyen Minh Chau">
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- Font Awesome 6 Icons for modern tech badges -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<link rel="stylesheet" href="css/aos.css">
+  <!-- Base Grid & Animations -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/aos.css">
 
-	<link rel="stylesheet" href="css/ionicons.min.css">
-
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
+  <!-- Custom Creative Modern Stylesheet -->
+  <link rel="stylesheet" href="css/custom-modern.css">
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body>
 
+  <!-- Futuristic Interactive Preloader (Inspired by selfolio) -->
+  <div id="cyberPreloader" class="cyber-preloader">
+    <div class="loader-inner-content">
+      <div class="loader-brand-box">
+        <span>&lt;NC /&gt;</span>
+      </div>
+      <div class="loader-counter-row">
+        <span class="loader-title">System Initialization</span>
+        <span id="loaderNumber" class="loader-number">00%</span>
+      </div>
+      <div class="loader-progress-track">
+        <div id="loaderProgressFill" class="loader-progress-fill"></div>
+      </div>
+      <div id="loaderStatusText" class="loader-status-text">Booting core kernel...</div>
+    </div>
+  </div>
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html"><span>K</span>ooMinJeong</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+  <!-- Custom Interactive Cursor (Dot & Outline like selfolio) -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li>
-					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#side-projects-section" class="nav-link"><span>Side
-								Projects</span></a>
-					</li>
-					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<section class="hero-wrap js-fullheight">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-					<div class="text text-center">
-						<span class="subheading">Hey! I am</span>
-						<h1>구민정</h1>
-						<h2>I'm a
-							<span class="txt-rotate" data-period="500"
-								data-rotate='[  "풀스택 개발자", "스타트업 개발자", "6년차"]'></span>
-						</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		<div class="mouse">
-			<a href="#" class="mouse-icon">
-				<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-			</a>
-		</div>
-	</section>
+  <!-- Ambient Glowing Background Lights -->
+  <div class="ambient-bg">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
 
-	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row d-flex no-gutters">
-				<div class="col-md-6 col-lg-6 d-flex">
-					<div class="img-about img d-flex align-items-stretch">
-						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center"
-							style="background-image:url(images/about.jpg);">
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-					<div class="row justify-content-start pb-3">
-						<div class="col-md-12 heading-section ftco-animate">
-							<h1 class="big">About</h1>
-							<h2 class="mb-4">About Me</h2>
-							<p>커피와 노트북만 있다면, 언제 어디서나 즐겁게 일하는 6년차 개발자 정쿠입니다. </p>
-							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span>Name:</span> <span>구민정</span></li>
-								<li class="d-flex"><span>Address:</span> <span>성남시 분당구 정자동</span></li>
-								<li class="d-flex"><span>Email:</span> <span>cookie00421@gmail.com</span></li>
-								<li class="d-flex"><span>Phone: </span> <span>+82-10-1234-5678</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="counter-wrap ftco-animate d-flex mt-md-3">
-						<div class="text">
-							<p class="mb-4">
-								<span class="number" data-number="24">0</span>
-								<span>Project complete</span>
-							</p>
-							<p><a target="_blank"
-									href="https://drive.google.com/file/d/1uJg0Yun35HWc4YsEKfEX5L6Uyik5MPl_/view?usp=sharing"
-									class="btn btn-primary py-3 px-3">이력서 다운받기</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- Mouse Light Follower -->
+  <div class="mouse-glow"></div>
 
-	<section class="ftco-section ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container-fluid px-md-5">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="365">0</strong>
-							<span>코딩한 일수</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="100">0</strong>
-							<span>Complete Projects</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="100">0</strong>
-							<span>Happy Customers</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="50">0</strong>
-							<span>Cups of coffee</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- Glassmorphism Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="#home-section">
+        <span class="brand-badge">NC</span>
+        <span>Minh Chau<span class="text-gradient">.dev</span></span>
+      </a>
 
+      <button class="navbar-toggler border-0 text-white" type="button" data-toggle="collapse" data-target="#navContent"
+        aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars-staggered" style="font-size: 1.4rem; color: var(--accent-cyan);"></i>
+      </button>
 
-	<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<nav id="navi">
-						<ul>
-							<li><a href="#page-1">Education</a></li>
-							<li><a href="#page-2">Experience</a></li>
-							<li><a href="#page-3">Skills</a></li>
-							<li><a href="#page-4">Projects</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-md-9" id="education-section">
-					<div id="page-1" class="page one">
-						<h2 class="heading">Education</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2010-2015</span>
-								<h2>컴퓨터 공학 & 전자 공학 복수 전공</h2>
-								<span class="position">Handong Global Univercity</span>
-								<p>전산 동아리 활동과 기숙사 생활을 통해, 함께 일하는 밥을 배웠습니다. Computer Science 기초 지식을 4년간 탄탄히 쌓아 빠르고 올바른
-									방향으로 성장할 수 있는 개발자가 되었습니다. </p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Computer Processing Systems/Computer Software</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-									into your mouth.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Diploma in Computer</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-									into your mouth.</p>
-							</div>
-						</div>
-					</div>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item"><a href="#home-section" class="nav-link nav-link-custom">Home</a></li>
+          <li class="nav-item"><a href="#about-section" class="nav-link nav-link-custom">About</a></li>
+          <li class="nav-item"><a href="#skills-section" class="nav-link nav-link-custom">Skills</a></li>
+          <li class="nav-item"><a href="#projects-section" class="nav-link nav-link-custom">Experience &amp;
+              Projects</a></li>
+          <li class="nav-item"><a href="#education-section" class="nav-link nav-link-custom">Education &amp; Awards</a>
+          </li>
+          <li class="nav-item"><a href="#contact-section" class="nav-link nav-link-custom">Contact</a></li>
+          <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+            <a href="Nguyen_Minh_Chau_Resume.pdf" download="Nguyen_Minh_Chau_CV.pdf" class="btn nav-cta-btn">
+              <i class="fa-solid fa-file-arrow-down mr-1"></i> Resume PDF
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-					<div id="page-2" class="page two">
-						<h2 class="heading">Work Experience</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2019.09-2021.04(1년 8개월)</span>
-								<h2>Full Stack Developer</h2>
-								<span class="position">주식회사 더라피스</span>
-								<p>동남아 스파 예약 서비스 Web 개발, 온라인 요가 수업 예약/결제 서비스 개발<br /></p>
-								<b class="text-primary">기술 스택</b>
-								<p>ReactJS, Next.js,Typescript, Styled-components, AWS S3 static hosting</p>
-								<b class="text-primary">주요 업무 </b>
-								<div>
-									<div> - React + typescript 기반 웹 서비스 개발/운영</div>
-									<div> - 디자인 시스템 도입을 위한 UI 컴포넌트 관리용 storybook 도입</div>
-									<div> - SEO를 위한 Next.js 도입</div>
-									<div> - Serverless 환경을 위한 s3 기반의 static hosting 구축</div>
-								</div>
-								</p>
-							</div>
+  <!-- Hero Section -->
+  <section class="hero-creative" id="home-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left: Headline & Bio -->
+        <div class="col-lg-7" data-aos="fade-right" data-aos-duration="900">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for Opportunities • Frontend / Fullstack Engineer</span>
+          </div>
 
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Web Designer</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Web Marketing</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Art &amp; Creative Director</h2>
-								<span class="position">Side Tech</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-					</div>
-					<div id="page-3" class="page three">
-						<h2 class="heading">Skills</h2>
-						<div class="row progress-circle mb-5">
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">CSS</h2>
+          <h1 class="hero-title">
+            Hello, I'm <br>
+            <span class="text-gradient">Nguyen Minh Chau</span>
+          </h1>
 
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='90'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
+          <div class="hero-subtitle-box">
+            <span>Specializing in:</span>
+            <span class="role-typewriter font-mono" id="heroTypewriter">Fullstack Software Engineer</span>
+          </div>
 
-									<!-- Demo info -->
-									<div class="row text-center mt-4">
-										<div class="col-6 border-right">
-											<div class="h4 font-weight-bold mb-0">28%</div><span
-												class="small text-gray">Last week</span>
-										</div>
-										<div class="col-6">
-											<div class="h4 font-weight-bold mb-0">60%</div><span
-												class="small text-gray">Last month</span>
-										</div>
-									</div>
-									<!-- END -->
-								</div>
-							</div>
+          <p class="hero-description">
+            Fullstack software engineer with <strong>2+ years of enterprise experience</strong> building
+            high-performance web systems. Proficient in crafting responsive, resilient client interfaces with
+            <strong>Angular (RxJS)</strong> &amp; <strong>ReactJS (Redux)</strong>, backed by enterprise <strong>Java
+              Spring Boot</strong> architectures with <strong>RabbitMQ &amp; Redis</strong> asynchronous queuing under
+            Agile/Scrum.
+          </p>
 
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">HTML</h2>
+          <div class="hero-actions">
+            <a href="#projects-section" class="btn-cyber-primary">
+              <i class="fa-solid fa-code-fork"></i> Explore Enterprise Projects
+            </a>
+            <a href="Nguyen_Minh_Chau_Resume.pdf" download="Nguyen_Minh_Chau_CV.pdf" class="btn-cyber-outline">
+              <i class="fa-solid fa-download"></i> Download Resume (PDF)
+            </a>
+          </div>
 
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='80'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
+          <!-- Quick Interactive Contacts -->
+          <div class="quick-contacts">
+            <a href="javascript:void(0)" onclick="copyTextToClipboard('+84812841590', 'Phone Number')"
+              class="contact-pill-item" title="Click to copy phone number">
+              <i class="fa-solid fa-phone text-success"></i> +84 812 841 590 <i class="fa-regular fa-copy ml-1"></i>
+            </a>
+            <a href="javascript:void(0)"
+              onclick="copyTextToClipboard('nguyenminhchau09012003@gmail.com', 'Email Address')"
+              class="contact-pill-item" title="Click to copy email address">
+              <i class="fa-solid fa-envelope text-info"></i> nguyenminhchau09012003@gmail.com <i
+                class="fa-regular fa-copy ml-1"></i>
+            </a>
+            <a href="https://github.com/codenobug0909" target="_blank" rel="noopener noreferrer"
+              class="contact-pill-item">
+              <i class="fa-brands fa-github text-white"></i> github.com/codenobug0909 <i
+                class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+            </a>
+            <span class="contact-pill-item">
+              <i class="fa-solid fa-location-dot text-danger"></i> Long Bien, Hanoi, VN
+            </span>
+          </div>
+        </div>
 
-									<!-- Demo info -->
-									<div class="row text-center mt-4">
-										<div class="col-6 border-right">
-											<div class="h4 font-weight-bold mb-0">28%</div><span
-												class="small text-gray">Last week</span>
-										</div>
-										<div class="col-6">
-											<div class="h4 font-weight-bold mb-0">60%</div><span
-												class="small text-gray">Last month</span>
-										</div>
-									</div>
-									<!-- END -->
-								</div>
-							</div>
+        <!-- Right: 3D-Like Avatar Showcase with Floating Badges -->
+        <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="hero-avatar-wrapper">
+            <div class="avatar-ambient-glow"></div>
 
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">jQuery</h2>
+            <!-- Floating Tech Badges -->
+            <div class="floating-badge badge-top-left">
+              <i class="fa-brands fa-angular" style="color: #dd0031; font-size: 1.2rem;"></i>
+              <span>Angular &amp; RxJS</span>
+            </div>
+            <div class="floating-badge badge-top-right">
+              <i class="fa-brands fa-java" style="color: #f89820; font-size: 1.2rem;"></i>
+              <span>Java Spring Boot</span>
+            </div>
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa-brands fa-react" style="color: #61dafb; font-size: 1.2rem;"></i>
+              <span>ReactJS &amp; Redux</span>
+            </div>
+            <div class="floating-badge badge-bottom-right">
+              <i class="fa-solid fa-bolt" style="color: #f59e0b; font-size: 1.1rem;"></i>
+              <span>RabbitMQ &amp; Redis</span>
+            </div>
 
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='75'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
+            <!-- Photo Frame with real candidate avatar -->
+            <div class="avatar-card-frame">
+              <img src="images/minhchau_avatar.png" alt="Nguyen Minh Chau - Fullstack Software Engineer"
+                class="avatar-img-inner">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-									<!-- Demo info -->
-									<div class="row text-center mt-4">
-										<div class="col-6 border-right">
-											<div class="h4 font-weight-bold mb-0">28%</div><span
-												class="small text-gray">Last week</span>
-										</div>
-										<div class="col-6">
-											<div class="h4 font-weight-bold mb-0">60%</div><span
-												class="small text-gray">Last month</span>
-										</div>
-									</div>
-									<!-- END -->
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>React</h3>
-									<div class="progress">
-										<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-											aria-valuemin="0" aria-valuemax="100" style="width:90%">
-											<span>90%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>jQuery</h3>
-									<div class="progress">
-										<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
-											aria-valuemin="0" aria-valuemax="100" style="width:85%">
-											<span>85%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>HTML5</h3>
-									<div class="progress">
-										<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
-											aria-valuemin="0" aria-valuemax="100" style="width:95%">
-											<span>95%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>CSS3</h3>
-									<div class="progress">
-										<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-											aria-valuemin="0" aria-valuemax="100" style="width:90%">
-											<span>90%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>WordPress</h3>
-									<div class="progress">
-										<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
-											aria-valuemin="0" aria-valuemax="100" style="width:70%">
-											<span>70%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>SEO</h3>
-									<div class="progress">
-										<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="page-4" class="page four">
-						<h2 id="projects-section" class="heading">Projects</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2019.09-2020.08</span>
-								<div class="d-flex">
-									<h2>웰리스 여행 상품 예약 플랫폼 개발</h2>
-									<div>&nbsp;<a class="btn btn-outline-secondary" target="_blank"
-											class="btn btn-outline-secondary"
-											href="https://github.com/congchu/portfolio-template-2">Github</a>&nbsp;<a
-											class="btn btn-outline-secondary" target="_blank"
-											href="/images/project_1_screenshot.png">스크린샷</a>&nbsp;<a
-											class="btn btn-outline-secondary" target="_blank"
-											href="https://www.wellytravel.com/">Link</a>
-									</div>
-								</div>
-								<span class="position">주식회사 더라피스</span>
-								<div> <b class="text-dark">기술 스택 : </b>React, Typescript, Next.js, Styled-Component,
-									MobX
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b> 회원 관리 및 SNS 로그인, 상품 리스트 확인, 상품 상세 정보
-									확인, 예약 관리, 결제 </div>
-								<p> React </p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Top 5 LeaderShip Exellence Winner</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Top 4 Web Tester</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Art &amp; Creative Director</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences
-									fly
-									into your mouth.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- Numerical Performance Stats Counter -->
+  <section class="counter-cyber-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-cyber-card">
+            <div class="stat-number text-gradient font-mono stat-count" data-target="2">0</div>
+            <div class="stat-label">Years of Industry Experience</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-cyber-card">
+            <div class="stat-number text-gradient font-mono stat-count" data-target="5">0</div>
+            <div class="stat-label">Major Enterprise Projects</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-cyber-card">
+            <div class="stat-number text-gradient font-mono stat-count" data-target="15">0</div>
+            <div class="stat-label">Mastered Technologies &amp; Tools</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-cyber-card">
+            <div class="stat-number text-gradient font-mono">Top 3</div>
+            <div class="stat-label">University AI Research Award</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- About Me Section -->
+  <section class="ftco-section" id="about-section" style="position: relative; z-index: 2; padding: 70px 0;">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-user-astronaut"></i> Professional Profile</span>
+        <h2 class="section-title">Philosophy &amp; Core Engineering Pillars</h2>
+        <p class="section-subtitle mx-auto">
+          Product-driven engineer dedicated to building resilient distributed systems, intuitive client interfaces, and
+          high-performance applications.
+        </p>
+      </div>
 
-	<section class="ftco-section ftco-project">
-		<div class="container-fluid px-md-0">
-			<div class="row no-gutters justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Projects</h1>
-					<h2 id="side-projects-section" class="mb-4">Side Projects</h2>
-					<p>꾸준히 사이드 프로젝트를 진행하며, 다양한 분야의 기술 스택을 경험해왔습니다.</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/side-project-1.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a target="_blank" href="https://qpi.kr/"> QPI - 소개팅 서비스 소개 페이지 개발</a></h3>
-							<span>UI/UX 디자인부터 웹 호스팅까지 전체 영역을 담당하였습니다.</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-2.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-							<span>Web Design</span>
-						</div>
-					</div>
-				</div>
+      <div class="row">
+        <!-- Left: Narrative & Background -->
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+          <div class="bento-card">
+            <h3 class="mb-3 text-gradient">Mindset &amp; Technical Foundation</h3>
+            <p style="font-size: 1.02rem; line-height: 1.8;">
+              Equipped with a solid computer science education from <strong>Hanoi Open University (Information
+                Technology, GPA 3.0)</strong>, I have contributed directly to production-grade software solutions across
+              telecommunications, healthcare insurance, and software technology agencies.
+            </p>
+            <p style="font-size: 1.02rem; line-height: 1.8;">
+              My key differentiator lies in seamlessly bridging modern reactive frontends—leveraging <strong>Angular
+                (PrimeNG, RxJS)</strong> and <strong>ReactJS (Redux)</strong>—with resilient <strong>Java Spring
+                Boot</strong> services. I adhere closely to <strong>Agile/Scrum</strong> practices, emphasizing modular
+              UI design, SQL query tuning, and streaming data architectures that perform under real-time demand.
+            </p>
 
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-3.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-							<span>Web Design</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-4.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-							<span>Web Design</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-5.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-							<span>Web Design</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-6.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-							<span>Web Design</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+            <div class="mt-4 pt-3 border-top" style="border-color: var(--border-glass) !important;">
+              <div class="d-flex align-items-center justify-content-between flex-wrap">
+                <div>
+                  <span class="text-muted d-block font-mono" style="font-size: 0.8rem;">TARGET ROLE</span>
+                  <strong class="text-white">Frontend Developer / Fullstack Developer</strong>
+                </div>
+                <div class="mt-2 mt-sm-0">
+                  <span class="text-muted d-block font-mono" style="font-size: 0.8rem;">CURRENT AVAILABILITY</span>
+                  <strong class="text-success"><i class="fa-solid fa-circle-check"></i> Ready for Immediate
+                    Onboarding</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-	<section class="ftco-section" id="blog-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Blog</h1>
-					<h2 class="mb-4">My Blog</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="#" class="mr-2">Admin</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="#" class="mr-2">Admin</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="#" class="mr-2">Admin</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <!-- Right: 4 Technical Pillars -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="about-detail-item">
+                <div class="about-detail-icon">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="about-detail-content">
+                  <h5>Real-Time Streaming</h5>
+                  <p>Harnessing <strong>RxJS</strong> operators to handle real-time data streaming, dynamic dashboard
+                    telemetry, and optimized search.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="about-detail-item">
+                <div class="about-detail-icon"
+                  style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple);">
+                  <i class="fa-solid fa-server"></i>
+                </div>
+                <div class="about-detail-content">
+                  <h5>Java Spring Boot</h5>
+                  <p>Architecting secure RESTful APIs, Spring Security with JWT tokens, and Hibernate/JPA persistence
+                    layers.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="about-detail-item">
+                <div class="about-detail-icon"
+                  style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald);">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <div class="about-detail-content">
+                  <h5>Queues &amp; Caching</h5>
+                  <p>Decoupling asynchronous notification tasks (Telegram/Email) via <strong>RabbitMQ &amp;
+                      Redis</strong> for low response latency.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="about-detail-item">
+                <div class="about-detail-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-amber);">
+                  <i class="fa-solid fa-cubes-stacked"></i>
+                </div>
+                <div class="about-detail-content">
+                  <h5>Component Reusability</h5>
+                  <p>Designing reusable Base &amp; Common UI components with PrimeNG &amp; Ant Design to accelerate
+                    feature delivery.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-	<section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>함께할 <span>회사를 찾는 중</span> 입니다.</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-					<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">연락주세요.</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
+          <!-- Quick Info Cards -->
+          <div class="bento-card mt-2 p-3">
+            <div class="row text-center font-mono">
+              <div class="col-4 border-right" style="border-color: var(--border-glass) !important;">
+                <span class="text-muted d-block" style="font-size: 0.75rem;">LOCATION</span>
+                <span class="text-white" style="font-size: 0.85rem;">Hanoi, Vietnam</span>
+              </div>
+              <div class="col-4 border-right" style="border-color: var(--border-glass) !important;">
+                <span class="text-muted d-block" style="font-size: 0.75rem;">METHODOLOGY</span>
+                <span class="text-white" style="font-size: 0.85rem;">Agile / Scrum</span>
+              </div>
+              <div class="col-4">
+                <span class="text-muted d-block" style="font-size: 0.75rem;">ENGLISH</span>
+                <span class="text-white" style="font-size: 0.85rem;">Technical Reading</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<p>회사와 함께 성장하는 개발자가 되겠습니다. 연락주세요.</p>
-				</div>
-			</div>
+  <!-- Technical Skills Bento Section -->
+  <section class="ftco-section" id="skills-section" style="position: relative; z-index: 2; padding: 70px 0;">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Technical Arsenal</span>
+        <h2 class="section-title">Skills &amp; Technology Matrix</h2>
+        <p class="section-subtitle mx-auto">
+          A comprehensive suite of modern frameworks, tools, and platforms applied across production software systems.
+        </p>
+      </div>
 
-			<div class="row d-flex contact-info mb-5">
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Address</h3>
-							<p>성남시 분당구 정자동</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Contact Number</h3>
-							<p><a href="tel://1234567920">+ 010 4277 1234</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Email Address</h3>
-							<p><a href="mailto:info@yoursite.com">cookie00421@gmail.com</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="#">yoursite.com</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
+      <div class="row">
+        <!-- 1. Languages -->
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon cyan">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h4 class="mb-0" style="font-size: 1.15rem;">Programming Languages</h4>
+                <small class="text-muted">Core Foundations</small>
+              </div>
+            </div>
+            <div>
+              <span class="skill-tag-pill featured"><i class="fa-brands fa-js text-warning"></i> JavaScript
+                (ES6+)</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-shield-halved text-info"></i>
+                TypeScript</span>
+              <span class="skill-tag-pill featured"><i class="fa-brands fa-java text-danger"></i> Java Core</span>
+              <span class="skill-tag-pill"><i class="fa-brands fa-html5 text-danger"></i> HTML5</span>
+              <span class="skill-tag-pill"><i class="fa-brands fa-css3-alt text-primary"></i> CSS3 / SCSS</span>
+            </div>
+          </div>
+        </div>
 
-		</div>
-	</section>
+        <!-- 2. Frontend Ecosystem -->
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon purple">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div>
+                <h4 class="mb-0" style="font-size: 1.15rem;">Frontend Frameworks</h4>
+                <small class="text-muted">Client-side &amp; UI Ecosystem</small>
+              </div>
+            </div>
+            <div>
+              <span class="skill-tag-pill featured"><i class="fa-brands fa-angular text-danger"></i> Angular</span>
+              <span class="skill-tag-pill featured"><i class="fa-brands fa-react text-info"></i> ReactJS</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-arrows-rotate text-purple"></i> Redux</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-bolt text-warning"></i> RxJS Streaming</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-layer-group text-primary"></i> PrimeNG</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-gem text-info"></i> Ant Design</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-wind text-teal"></i> TailwindCSS</span>
+              <span class="skill-tag-pill"><i class="fa-brands fa-bootstrap text-purple"></i> Bootstrap</span>
+            </div>
+          </div>
+        </div>
 
+        <!-- 3. Backend & Security -->
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon emerald">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <div>
+                <h4 class="mb-0" style="font-size: 1.15rem;">Backend &amp; Security</h4>
+                <small class="text-muted">Spring Ecosystem Services</small>
+              </div>
+            </div>
+            <div>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-leaf text-success"></i> Java Spring
+                Boot</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-lock text-warning"></i> Spring Security</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-key text-info"></i> JWT Authentication</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-database text-primary"></i> Hibernate / JPA</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-network-wired text-success"></i> RESTful API
+                Design</span>
+            </div>
+          </div>
+        </div>
 
-	<footer class="ftco-footer ftco-section">
-		<div class="container">
+        <!-- 4. Distributed Systems & Caching -->
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon amber">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <div>
+                <h4 class="mb-0" style="font-size: 1.15rem;">Message Queues &amp; Cache</h4>
+                <small class="text-muted">Distributed &amp; Event-Driven</small>
+              </div>
+            </div>
+            <div>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-fire text-danger"></i> Redis Cache</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-envelope-open-text text-warning"></i>
+                RabbitMQ</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-stream text-primary"></i> Apache Kafka</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-bell text-info"></i> Async Telegram/Email Jobs</span>
+            </div>
+          </div>
+        </div>
 
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+        <!-- 5. Database Systems -->
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon cyan">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <div>
+                <h4 class="mb-0" style="font-size: 1.15rem;">Database Systems</h4>
+                <small class="text-muted">Relational &amp; Query Optimization</small>
+              </div>
+            </div>
+            <div>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-database text-warning"></i> MySQL</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-server text-danger"></i> Microsoft SQL
+                Server</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-gauge-high text-success"></i> SQL Query Tuning</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-table-list text-info"></i> Indexing &amp; Schema
+                Modeling</span>
+            </div>
+          </div>
+        </div>
 
+        <!-- 6. Testing, DevOps & Tools -->
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon purple">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <div>
+                <h4 class="mb-0" style="font-size: 1.15rem;">DevOps, Testing &amp; Cloud</h4>
+                <small class="text-muted">CI/CD &amp; Quality Assurance</small>
+              </div>
+            </div>
+            <div>
+              <span class="skill-tag-pill featured"><i class="fa-brands fa-docker text-primary"></i> Docker</span>
+              <span class="skill-tag-pill"><i class="fa-brands fa-aws text-warning"></i> AWS &amp; S3 MinIO</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-globe text-success"></i> NGINX &amp; Ngrok</span>
+              <span class="skill-tag-pill featured"><i class="fa-solid fa-paper-plane text-warning"></i> Postman &amp;
+                Test Scripts</span>
+              <span class="skill-tag-pill"><i class="fa-solid fa-vial-circle-check text-info"></i> JUnit Testing</span>
+              <span class="skill-tag-pill"><i class="fa-brands fa-git-alt text-danger"></i> Git, GitHub, GitLab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Experience & Enterprise Projects Section -->
+  <section class="ftco-section" id="projects-section" style="position: relative; z-index: 2; padding: 70px 0;">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Work Experience</span>
+        <h2 class="section-title">Enterprise Production Projects</h2>
+        <p class="section-subtitle mx-auto">
+          Five large-scale enterprise applications deployed across telecommunications, healthcare insurance, and legal
+          software domains.
+        </p>
 
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
+        <!-- Filter Controls -->
+        <div class="filter-container mt-4">
+          <button type="button" class="filter-btn active" data-filter="all">All Projects (5)</button>
+          <button type="button" class="filter-btn" data-filter="fullstack">Fullstack (Spring Boot + React)</button>
+          <button type="button" class="filter-btn" data-filter="angular">Frontend (Angular &amp; RxJS)</button>
+          <button type="button" class="filter-btn" data-filter="enterprise">Enterprise Systems</button>
+        </div>
+      </div>
 
+      <div class="row justify-content-center">
+        <div class="col-lg-11">
+          <div class="experience-timeline">
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
+            <!-- PROJECT 1: HRM System (TCI Thu Cuc) -->
+            <div class="timeline-entry present project-item-wrapper" data-category="all fullstack enterprise"
+              data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="project-card-cyber">
+                <div class="project-top-meta">
+                  <div class="d-flex align-items-center flex-wrap gap-2">
+                    <span class="company-badge"><i class="fa-solid fa-building-shield"></i> TCI THUCUC INSURANCE</span>
+                    <span class="team-badge"><i class="fa-solid fa-users"></i> Team: 5 Members</span>
+                  </div>
+                  <span class="date-badge"><i class="fa-regular fa-clock"></i> 12/2025 - Present</span>
+                </div>
 
-	<script src="js/main.js"></script>
+                <h3 class="project-card-title">HUMAN RESOURCE MANAGEMENT (HRM)</h3>
+                <div class="project-role-text"><i class="fa-solid fa-code"></i> Fullstack Developer (Java Spring Boot +
+                  ReactJS)</div>
+
+                <p class="project-desc">
+                  Engineered and maintained a comprehensive enterprise Human Resource Management System overseeing
+                  employee master records, automated payroll calculation, attendance logging, leave approvals,
+                  recruitment workflows, and cross-departmental operations.
+                </p>
+
+                <h5 class="text-white mb-2" style="font-size: 0.92rem;"><i class="fa-solid fa-list-check text-cyan"></i>
+                  Key Responsibilities &amp; Technical Achievements:</h5>
+                <ul class="project-feature-list">
+                  <li>Developed and enhanced core functional modules: Employee Management, Payroll Engine, Attendance
+                    Tracking, Leave Requests, and Recruitment.</li>
+                  <li>Architected and implemented secure, high-throughput <strong>RESTful APIs</strong> using
+                    <strong>Java Spring Boot</strong>.</li>
+                  <li>Built responsive client interfaces and managed centralized application state seamlessly using
+                    <strong>ReactJS &amp; Redux</strong>.</li>
+                  <li><strong>Asynchronous Message Architecture:</strong> Designed a background job processing mechanism
+                    with <strong>RabbitMQ &amp; Redis</strong> for automated Telegram &amp; Email alerts, eliminating
+                    blocking operations and optimizing system responsiveness.</li>
+                  <li>Refactored legacy code to boost readability and maintainability; optimized complex SQL queries for
+                    large data volumes.</li>
+                  <li>Conducted automated API testing with Postman &amp; Postman Scripts; diagnosed and resolved
+                    production issues.</li>
+                </ul>
+
+                <div class="project-tech-stack-row">
+                  <span class="tech-tag"><i class="fa-brands fa-java text-warning"></i> Java</span>
+                  <span class="tech-tag"><i class="fa-solid fa-leaf text-success"></i> Spring Boot</span>
+                  <span class="tech-tag"><i class="fa-brands fa-react text-info"></i> ReactJS</span>
+                  <span class="tech-tag"><i class="fa-solid fa-arrows-rotate text-purple"></i> Redux</span>
+                  <span class="tech-tag"><i class="fa-solid fa-database text-warning"></i> MySQL</span>
+                  <span class="tech-tag"><i class="fa-solid fa-envelope-open-text text-warning"></i> RabbitMQ</span>
+                  <span class="tech-tag"><i class="fa-solid fa-fire text-danger"></i> Redis</span>
+                  <span class="tech-tag">RESTful API</span>
+                  <span class="tech-tag">Postman</span>
+                  <span class="tech-tag">Git</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT 2: Asset Management System (TCI Thu Cuc) -->
+            <div class="timeline-entry present project-item-wrapper" data-category="all fullstack enterprise"
+              data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="project-card-cyber">
+                <div class="project-top-meta">
+                  <div class="d-flex align-items-center flex-wrap gap-2">
+                    <span class="company-badge"><i class="fa-solid fa-hospital"></i> TCI THUCUC INSURANCE</span>
+                    <span class="team-badge"><i class="fa-solid fa-users"></i> Team: 5 Members</span>
+                  </div>
+                  <span class="date-badge"><i class="fa-regular fa-clock"></i> 12/2025 - Present</span>
+                </div>
+
+                <h3 class="project-card-title">HOSPITAL ASSET &amp; INVENTORY MANAGEMENT</h3>
+                <div class="project-role-text"><i class="fa-solid fa-code"></i> Fullstack Developer (Java Spring Boot +
+                  ReactJS)</div>
+
+                <p class="project-desc">
+                  Built and supported an Asset Management System for managing medical equipment, hospital assets, and
+                  office supplies across clinical and administrative departments under TCI Healthcare.
+                </p>
+
+                <h5 class="text-white mb-2" style="font-size: 0.92rem;"><i class="fa-solid fa-list-check text-cyan"></i>
+                  Key Responsibilities &amp; Technical Achievements:</h5>
+                <ul class="project-feature-list">
+                  <li>Engineered modules for hospital inventory tracking, medical equipment depreciation, and stock
+                    distribution.</li>
+                  <li>Designed and delivered RESTful APIs with <strong>Java Spring Boot</strong> and synchronized
+                    frontend state using <strong>ReactJS &amp; Redux</strong>.</li>
+                  <li>Refactored legacy codebases to improve readability, maintainability, and execution performance.
+                  </li>
+                  <li>Tuned relational SQL queries for high-volume asset reporting and audit logs.</li>
+                  <li>Authored automated API validation scripts on Postman and participated in continuous deployment
+                    cycles.</li>
+                </ul>
+
+                <div class="project-tech-stack-row">
+                  <span class="tech-tag"><i class="fa-brands fa-java text-warning"></i> Java</span>
+                  <span class="tech-tag"><i class="fa-solid fa-leaf text-success"></i> Spring Boot</span>
+                  <span class="tech-tag"><i class="fa-brands fa-react text-info"></i> ReactJS</span>
+                  <span class="tech-tag"><i class="fa-solid fa-arrows-rotate text-purple"></i> Redux</span>
+                  <span class="tech-tag"><i class="fa-solid fa-database text-warning"></i> MySQL</span>
+                  <span class="tech-tag">RESTful API</span>
+                  <span class="tech-tag">Postman</span>
+                  <span class="tech-tag">Git</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT 3: Disaster Prevention Software (Viettel Net) -->
+            <div class="timeline-entry project-item-wrapper" data-category="all angular enterprise" data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="project-card-cyber">
+                <div class="project-top-meta">
+                  <div class="d-flex align-items-center flex-wrap gap-2">
+                    <span class="company-badge"
+                      style="background: rgba(220, 38, 38, 0.1); color: #ef4444; border-color: rgba(220, 38, 38, 0.3);">
+                      <i class="fa-solid fa-tower-broadcast"></i> ONSITE VIETTEL NET
+                    </span>
+                    <span class="team-badge"><i class="fa-solid fa-users"></i> Team: 5 Members</span>
+                  </div>
+                  <span class="date-badge"><i class="fa-regular fa-clock"></i> 06/2025 - 11/2025</span>
+                </div>
+
+                <h3 class="project-card-title">THE DISASTER PREVENTION SOFTWARE OF DISASTER PREVENTION DEPARTMENT</h3>
+                <div class="project-role-text" style="color: #ef4444;"><i class="fa-solid fa-code"></i> Frontend
+                  Developer (Angular + PrimeNG + RxJS)</div>
+
+                <p class="project-desc">
+                  Mission-critical command and natural disaster monitoring software for the National Disaster Prevention
+                  Department: real-time incident tracking by geolocation coordinates, timestamped telemetry, emergency
+                  response planning, relief supplies dispatch, and field responder command.
+                </p>
+
+                <h5 class="text-white mb-2" style="font-size: 0.92rem;"><i class="fa-solid fa-list-check text-cyan"></i>
+                  Key Responsibilities &amp; Technical Achievements:</h5>
+                <ul class="project-feature-list">
+                  <li>Programmed the central <strong>Frontend Real-Time Telemetry Dashboard</strong> and employee task
+                    management modules for field staff.</li>
+                  <li><strong>Real-Time Data Streaming with RxJS:</strong> Captured high-frequency incident feeds
+                    continuously streaming onto dashboard screens, supporting instantaneous multi-criteria search
+                    without UI stutter.</li>
+                  <li>Upgraded TypeScript codebase architecture, established robust UI/UX logic, and tuned overall
+                    client-side rendering speed.</li>
+                  <li>Collaborated closely within an <strong>Agile/Scrum</strong> framework on-site at Viettel Net.</li>
+                </ul>
+
+                <div class="project-tech-stack-row">
+                  <span class="tech-tag"><i class="fa-brands fa-angular text-danger"></i> Angular</span>
+                  <span class="tech-tag"><i class="fa-solid fa-layer-group text-primary"></i> PrimeNG</span>
+                  <span class="tech-tag"><i class="fa-solid fa-bolt text-warning"></i> RxJS Streaming</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Agile / Scrum</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT 4: E-Learning Platform (Icetea Software) -->
+            <div class="timeline-entry project-item-wrapper" data-category="all angular fullstack" data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="project-card-cyber">
+                <div class="project-top-meta">
+                  <div class="d-flex align-items-center flex-wrap gap-2">
+                    <span class="company-badge"
+                      style="background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                      <i class="fa-solid fa-cube"></i> ICETEA SOFTWARE TECHNOLOGY
+                    </span>
+                    <span class="team-badge"><i class="fa-solid fa-users"></i> Team: 5 Members</span>
+                  </div>
+                  <span class="date-badge"><i class="fa-regular fa-clock"></i> 01/2025 - 05/2025</span>
+                </div>
+
+                <h3 class="project-card-title">E-LEARNING MODERN EDUCATION PLATFORM</h3>
+                <div class="project-role-text" style="color: #10b981;"><i class="fa-solid fa-code"></i> Fullstack
+                  Developer (Angular + PrimeNG + Java BE)</div>
+
+                <p class="project-desc">
+                  A modern, flexible online education platform facilitating ubiquitous learning anytime, anywhere;
+                  digitizing educational delivery for schools, corporate training institutes, and individual educators.
+                </p>
+
+                <h5 class="text-white mb-2" style="font-size: 0.92rem;"><i class="fa-solid fa-list-check text-cyan"></i>
+                  Key Responsibilities &amp; Technical Achievements:</h5>
+                <ul class="project-feature-list">
+                  <li>Programmed Frontend &amp; Backend services for core modules: <strong>School Portal, Account
+                      Management, and Role-Based Access Control (RBAC)</strong>.</li>
+                  <li>Architected shared Base and Common UI components to maintain visual consistency and accelerate
+                    development across modules.</li>
+                  <li>Deepened TypeScript mastery and optimized data-table rendering for high-volume student enrollments
+                    and course registries.</li>
+                  <li>Participated in Agile/Scrum development sprints, code reviews, and release validation.</li>
+                </ul>
+
+                <div class="project-tech-stack-row">
+                  <span class="tech-tag"><i class="fa-brands fa-angular text-danger"></i> Angular</span>
+                  <span class="tech-tag"><i class="fa-solid fa-layer-group text-primary"></i> PrimeNG</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Base UI Components</span>
+                  <span class="tech-tag">Agile / Scrum</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT 5: Case Files Storage Software (Icetea Software) -->
+            <div class="timeline-entry project-item-wrapper" data-category="all angular enterprise" data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="project-card-cyber">
+                <div class="project-top-meta">
+                  <div class="d-flex align-items-center flex-wrap gap-2">
+                    <span class="company-badge"
+                      style="background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                      <i class="fa-solid fa-cube"></i> ICETEA SOFTWARE TECHNOLOGY
+                    </span>
+                    <span class="team-badge"><i class="fa-solid fa-users"></i> Team: 6 Members</span>
+                  </div>
+                  <span class="date-badge"><i class="fa-regular fa-clock"></i> 05/2024 - 12/2024</span>
+                </div>
+
+                <h3 class="project-card-title">CASE MANAGEMENT SOFTWARE (LEGAL CASE STORAGE)</h3>
+                <div class="project-role-text" style="color: #10b981;"><i class="fa-solid fa-code"></i> Fullstack
+                  Developer (Angular + PrimeNG + RxJS)</div>
+
+                <p class="project-desc">
+                  High-security legal case files storage and management system tailored for judicial agencies and law
+                  enforcement institutions, streamlining legal dossiers, access governance, and cross-departmental
+                  collaboration.
+                </p>
+
+                <h5 class="text-white mb-2" style="font-size: 0.92rem;"><i class="fa-solid fa-list-check text-cyan"></i>
+                  Key Responsibilities &amp; Technical Achievements:</h5>
+                <ul class="project-feature-list">
+                  <li>Programmed central CMS modules, folder/document hierarchy tree, and created reusable UI base
+                    components.</li>
+                  <li><strong>Implemented RxJS for streaming data handling:</strong> Updated real-time legal case status
+                    indicators on CMS screens and enabled high-speed indexed search across confidential legal records.
+                  </li>
+                  <li>Advanced TypeScript knowledge, elevated UI/UX responsiveness, and enforced security standards.
+                  </li>
+                  <li>Worked within an Agile/Scrum team setup, helping ensure on-schedule delivery across the 6-member
+                    team.</li>
+                </ul>
+
+                <div class="project-tech-stack-row">
+                  <span class="tech-tag"><i class="fa-brands fa-angular text-danger"></i> Angular</span>
+                  <span class="tech-tag"><i class="fa-solid fa-layer-group text-primary"></i> PrimeNG</span>
+                  <span class="tech-tag"><i class="fa-solid fa-bolt text-warning"></i> RxJS Streaming</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Legal CMS</span>
+                  <span class="tech-tag">Agile / Scrum</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Scientific Research Section -->
+  <section class="ftco-section" id="education-section" style="position: relative; z-index: 2; padding: 70px 0;">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic &amp; Research</span>
+        <h2 class="section-title">Education &amp; Scientific Research</h2>
+        <p class="section-subtitle mx-auto">
+          Rigorous computer science curriculum backed by university-level artificial intelligence research awards.
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- Education Card -->
+        <div class="col-lg-6 mb-4" data-aos="fade-right">
+          <div class="bento-card">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="text-cyan font-mono" style="font-size: 0.88rem;"><i class="fa-regular fa-calendar"></i> 2021
+                - 2025</span>
+              <span class="badge badge-success px-3 py-2 font-mono" style="border-radius: 20px;">GPA: 3.0 / 4.0</span>
+            </div>
+            <h3 class="mb-1" style="font-size: 1.45rem;">HANOI OPEN UNIVERSITY</h3>
+            <h5 class="text-muted mb-3" style="font-size: 1rem; font-weight: 500;">Bachelor of Science in Information
+              Technology</h5>
+            <div class="p-3 mb-3 rounded"
+              style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass);">
+              <span class="text-white font-weight-bold d-block mb-1"><i
+                  class="fa-solid fa-laptop-code text-info mr-2"></i> Major: Information Technology (IT)</span>
+              <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                Built robust foundations in Data Structures &amp; Algorithms, Object-Oriented Programming (OOP),
+                Relational Databases, Operating Systems, Computer Networking, and Modern Software Engineering
+                methodologies.
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="status-dot"></span>
+              <span class="text-secondary" style="font-size: 0.88rem;">Graduation: 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scientific Research Award Card -->
+        <div class="col-lg-6 mb-4" data-aos="fade-left">
+          <div class="award-banner-card h-100">
+            <div class="award-icon-box">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge badge-warning text-dark font-weight-bold px-2 py-1 font-mono">05/2025</span>
+                <span class="text-warning font-weight-bold" style="font-size: 0.9rem;">3RD PRIZE UNIVERSITY
+                  RESEARCH</span>
+              </div>
+              <h4 class="text-white mb-2" style="font-size: 1.3rem;">Topic: Integrating AI Chatbot into University Web
+                Portal</h4>
+              <p class="text-muted mb-0" style="font-size: 0.92rem; line-height: 1.7;">
+                Awarded Third Prize in the 2025 University-wide Student Scientific Research Competition. Researched
+                conversational language models and engineered an AI chatbot directly integrated into the university web
+                portal to automate admissions inquiries and student academic queries for thousands of campus users.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Connect Section -->
+  <section class="ftco-section" id="contact-section" style="position: relative; z-index: 2; padding: 70px 0 100px;">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+        <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+        <p class="section-subtitle mx-auto">
+          I am actively exploring frontend and fullstack engineering opportunities. Let's discuss how I can contribute
+          to your engineering team!
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- Left: Contact Details & Direct Actions -->
+        <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+          <div class="contact-card-box">
+            <h3 class="mb-4 text-gradient">Contact Information</h3>
+
+            <a href="javascript:void(0)" onclick="copyTextToClipboard('+84812841590', 'Phone Number')"
+              class="contact-info-link" title="Click to copy phone number">
+              <div class="contact-icon-wrap">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <span class="text-muted d-block" style="font-size: 0.78rem;">PHONE / WHATSAPP / ZALO</span>
+                <strong class="text-white" style="font-size: 1.05rem;">+84 812 841 590</strong>
+                <small class="text-info d-block" style="font-size: 0.75rem;"><i class="fa-regular fa-copy"></i> Click to
+                  copy</small>
+              </div>
+            </a>
+
+            <a href="javascript:void(0)"
+              onclick="copyTextToClipboard('nguyenminhchau09012003@gmail.com', 'Email Address')"
+              class="contact-info-link" title="Click to copy email address">
+              <div class="contact-icon-wrap" style="color: var(--accent-purple); background: rgba(139, 92, 246, 0.12);">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <span class="text-muted d-block" style="font-size: 0.78rem;">OFFICIAL EMAIL</span>
+                <strong class="text-white"
+                  style="font-size: 0.95rem; word-break: break-all;">nguyenminhchau09012003@gmail.com</strong>
+                <small class="text-info d-block" style="font-size: 0.75rem;"><i class="fa-regular fa-copy"></i> Click to
+                  copy</small>
+              </div>
+            </a>
+
+            <a href="https://github.com/codenobug0909" target="_blank" rel="noopener noreferrer"
+              class="contact-info-link">
+              <div class="contact-icon-wrap" style="color: #fff; background: rgba(255, 255, 255, 0.1);">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div>
+                <span class="text-muted d-block" style="font-size: 0.78rem;">GITHUB REPOSITORIES</span>
+                <strong class="text-white" style="font-size: 1.05rem;">codenobug0909</strong>
+                <small class="text-muted d-block" style="font-size: 0.75rem;">View Profile <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></small>
+              </div>
+            </a>
+
+            <div class="contact-info-link">
+              <div class="contact-icon-wrap"
+                style="color: var(--accent-emerald); background: rgba(16, 185, 129, 0.12);">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <span class="text-muted d-block" style="font-size: 0.78rem;">CURRENT RESIDENCE</span>
+                <strong class="text-white" style="font-size: 1rem;">Long Bien District, Hanoi, Vietnam</strong>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 text-center">
+              <a href="Nguyen_Minh_Chau_Resume.pdf" download="Nguyen_Minh_Chau_CV.pdf"
+                class="btn btn-cyber-primary w-100 justify-content-center">
+                <i class="fa-solid fa-file-pdf"></i> Download Official Resume (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Quick Message Form -->
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="contact-card-box">
+            <h3 class="mb-3 text-white">Direct Message</h3>
+            <p class="text-muted mb-4" style="font-size: 0.95rem;">
+              Send an inquiry, project collaboration idea, or interview invitation directly to Nguyen Minh Chau.
+            </p>
+
+            <form id="portfolioContactForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="formName" class="text-muted font-mono" style="font-size: 0.82rem;">YOUR NAME / COMPANY
+                    *</label>
+                  <input type="text" id="formName" class="cyber-input" placeholder="e.g. Alex Johnson (Tech Corp)"
+                    required>
+                </div>
+                <div class="col-md-6">
+                  <label for="formEmail" class="text-muted font-mono" style="font-size: 0.82rem;">YOUR EMAIL ADDRESS
+                    *</label>
+                  <input type="email" id="formEmail" class="cyber-input" placeholder="name@company.com" required>
+                </div>
+              </div>
+
+              <label for="formMessage" class="text-muted font-mono" style="font-size: 0.82rem;">MESSAGE / INQUIRY
+                DETAILS *</label>
+              <textarea id="formMessage" rows="5" class="cyber-input"
+                placeholder="Opportunity description, team role, or any questions you may have..." required></textarea>
+
+              <button type="submit" class="btn-cyber-primary w-100 justify-content-center py-3">
+                <i class="fa-solid fa-paper-plane mr-2"></i> Send Message to Chau
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Cyber Footer -->
+  <footer class="footer-cyber">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-center mb-3">
+        <span class="brand-badge mr-2">NC</span>
+        <h4 class="mb-0 text-white">Nguyen Minh Chau</h4>
+      </div>
+      <p class="text-muted mb-3" style="max-width: 500px; margin: 0 auto; font-size: 0.9rem;">
+        Fullstack Software Engineer • Crafting resilient, elegant web software architectures.
+      </p>
+      <div class="d-flex justify-content-center gap-3 mb-4">
+        <a href="https://github.com/codenobug0909" target="_blank" rel="noopener noreferrer" class="contact-pill-item">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="mailto:nguyenminhchau09012003@gmail.com" class="contact-pill-item">
+          <i class="fa-solid fa-envelope"></i> Email
+        </a>
+        <a href="tel:+84812841590" class="contact-pill-item">
+          <i class="fa-solid fa-phone"></i> Call
+        </a>
+      </div>
+      <div class="text-dim font-mono" style="font-size: 0.8rem;">
+        &copy; <span id="currentYear">2026</span> Nguyen Minh Chau. All Rights Reserved. Built with modern web
+        standards.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Toast Notification -->
+  <div id="cyberToast" class="toast-cyber">
+    <i class="fa-solid fa-circle-check text-cyan"></i>
+    <span class="toast-msg">Copied to clipboard!</span>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Core JavaScript Libraries -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <!-- Custom Interactive Module -->
+  <script src="js/portfolio-interactive.js"></script>
+
+  <script>
+    // Initialize AOS animation library
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 80
+      });
+    }
+
+    // Set dynamic current year in footer
+    const yrElem = document.getElementById('currentYear');
+    if (yrElem) yrElem.textContent = new Date().getFullYear();
+  </script>
 
 </body>
 
